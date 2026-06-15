@@ -1,17 +1,30 @@
+
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مِنصّة تِكْسِلْ | المدونة التقنية المتقدمة</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Cairo (Perfect for Tech Arabic) -->
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.pexels.com">
+
+    <!-- Preload critical assets to prevent FOUT/CLS -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+
+    <!-- Google Fonts: Cairo -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
         tailwind.config = {
@@ -71,7 +84,7 @@
     <header class="sticky top-0 z-40 w-full glass-effect border-b border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="flex items-center space-x-3 space-x-reverse group">
+            <a href="#" class="flex items-center space-x-3 space-x-reverse group" aria-label="تِكْسِلْ - الصفحة الرئيسية">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accent-sky to-accent-emerald flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-accent-sky/20 group-hover:scale-105 transition-transform">
                     تـ
                 </div>
@@ -91,7 +104,7 @@
             <!-- Search & Actions -->
             <div class="flex items-center space-x-4 space-x-reverse">
                 <div class="relative hidden sm:block">
-                    <input type="text" id="search-input" onkeyup="searchArticles()" placeholder="ابحث عن مقال..." class="bg-slate-900/80 border border-slate-700/50 rounded-full py-2 pr-10 pl-4 text-xs focus:outline-none focus:border-accent-sky focus:ring-1 focus:ring-accent-sky transition-all w-48 md:w-64 text-slate-200">
+                    <input type="text" id="search-input" onkeyup="searchArticles()" placeholder="ابحث عن مقال..." aria-label="ابحث عن مقال تقني" class="bg-slate-900/80 border border-slate-700/50 rounded-full py-2 pr-10 pl-4 text-xs focus:outline-none focus:border-accent-sky focus:ring-1 focus:ring-accent-sky transition-all w-48 md:w-64 text-slate-200">
                     <span class="absolute right-3.5 top-2.5 text-slate-400 text-xs"><i class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
                 <a href="#newsletter-section" class="bg-gradient-to-r from-accent-sky to-accent-emerald text-slate-950 font-bold px-5 py-2.5 rounded-xl text-xs hover:opacity-90 transition-opacity shadow-md shadow-accent-sky/10">
@@ -101,207 +114,217 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28 border-b border-slate-900">
-        <!-- Background Glows -->
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-sky/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-emerald/5 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Main Content Wrapper -->
+    <main id="main-content">
+        
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28 border-b border-slate-900">
+            <!-- Background Glows -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-sky/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-emerald/5 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto">
-                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-accent-sky mb-6">
-                    <span class="w-2 h-2 rounded-full bg-accent-sky animate-pulse"></span>
-                    منصة الفكر التقني المتقدم والأتمتة الذكية
-                </span>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight sm:leading-none text-slate-50 mb-8">
-                    أفكار هندسية تصنع <br class="hidden sm:inline">
-                    <span class="bg-gradient-to-l from-accent-sky via-accent-emerald to-accent-purple bg-clip-text text-transparent">المستقبل الرقمي</span>
-                </h1>
-                <p class="text-base sm:text-lg text-slate-400 leading-relaxed mb-10">
-                    مساحة مخصصة للمطورين، رواد الأعمال الرقميين، وصناع القرار التقني. نقدم تحليلات عميقة، أدلة برمجية، واستراتيجيات عملية خالية من الحشو.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#articles-section" class="px-8 py-4 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-100 font-semibold rounded-2xl transition-all duration-200 glow-hover">
-                        استكشف المقالات العميقـة
-                    </a>
-                    <a href="#newsletter-section" class="px-8 py-4 bg-gradient-to-r from-accent-sky to-accent-emerald hover:opacity-95 text-slate-950 font-bold rounded-2xl transition-all duration-200">
-                        انضم للنشرة البريدية
-                    </a>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-accent-sky mb-6">
+                        <span class="w-2 h-2 rounded-full bg-accent-sky animate-pulse"></span>
+                        منصة الفكر التقني المتقدم والأتمتة الذكية
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight sm:leading-none text-slate-50 mb-8">
+                        أفكار هندسية تصنع <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-l from-accent-sky via-accent-emerald to-accent-purple bg-clip-text text-transparent">المستقبل الرقمي</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-400 leading-relaxed mb-10">
+                        مساحة مخصصة للمطورين، رواد الأعمال الرقميين، وصناع القرار التقني. نقدم تحليلات عميقة، أدلة برمجية، واستراتيجيات عملية خالية من الحشو.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#articles-section" class="px-8 py-4 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-100 font-semibold rounded-2xl transition-all duration-200 glow-hover">
+                            استكشف المقالات العميقـة
+                        </a>
+                        <a href="#newsletter-section" class="px-8 py-4 bg-gradient-to-r from-accent-sky to-accent-emerald hover:opacity-95 text-slate-950 font-bold rounded-2xl transition-all duration-200">
+                            انضم للنشرة البريدية
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Blog & Articles Section -->
-    <section id="articles-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Filter & Header Bar -->
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12 pb-6 border-b border-slate-800/60">
-            <div>
-                <h2 class="text-2xl sm:text-3xl font-bold text-slate-100">أحدث الأطروحات التقنية</h2>
-                <p class="text-sm text-slate-400 mt-2">مقالات مكثفة مدعومة بالكود والتحليل الهيكلي</p>
+        <!-- Blog & Articles Section -->
+        <section id="articles-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Filter & Header Bar -->
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12 pb-6 border-b border-slate-800/60">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-100">أحدث الأطروحات التقنية</h2>
+                    <p class="text-sm text-slate-400 mt-2">مقالات مكثفة مدعومة بالكود والتحليل الهيكلي</p>
+                </div>
+                
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-2" id="category-filters">
+                    <button onclick="filterCategory('all')" class="category-btn active px-4 py-2 text-xs font-semibold rounded-xl bg-accent-sky text-slate-950 transition-all duration-200" aria-label="عرض كل التصنيفات">الكل</button>
+                    <button onclick="filterCategory('automation')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200" aria-label="تصنيف الأتمتة">الأتمتة</button>
+                    <button onclick="filterCategory('assets')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200" aria-label="تصنيف الأصول الرقمية">الأصول الرقمية</button>
+                    <button onclick="filterCategory('webassembly')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200" aria-label="تصنيف الويب المتقدم">الويب المتقدم</button>
+                    <button onclick="filterCategory('privacy')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200" aria-label="تصنيف الخصوصية">الخصوصية</button>
+                    <button onclick="filterCategory('ai')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200" aria-label="تصنيف الذكاء الاصطناعي">الذكاء الاصطناعي</button>
+                </div>
+            </div>
+
+            <!-- Search input for mobile inside section -->
+            <div class="mb-8 sm:hidden">
+                <div class="relative">
+                    <input type="text" id="search-input-mobile" onkeyup="searchArticlesMobile()" placeholder="ابحث عن مقال..." aria-label="ابحث عن مقال تقني للهاتف" class="w-full bg-slate-900/80 border border-slate-700/50 rounded-xl py-3 pr-10 pl-4 text-xs focus:outline-none focus:border-accent-sky text-slate-200">
+                    <span class="absolute right-3.5 top-3.5 text-slate-400 text-xs"><i class="fa-solid fa-magnifying-glass"></i></span>
+                </div>
+            </div>
+
+            <!-- Articles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
+                <!-- Article cards will be injected here dynamically via JS -->
             </div>
             
-            <!-- Category Filters -->
-            <div class="flex flex-wrap gap-2" id="category-filters">
-                <button onclick="filterCategory('all')" class="category-btn active px-4 py-2 text-xs font-semibold rounded-xl bg-accent-sky text-slate-950 transition-all duration-200">الكل</button>
-                <button onclick="filterCategory('automation')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200">الأتمتة</button>
-                <button onclick="filterCategory('assets')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200">الأصول الرقمية</button>
-                <button onclick="filterCategory('webassembly')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200">الويب المتقدم</button>
-                <button onclick="filterCategory('privacy')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200">الخصوصية</button>
-                <button onclick="filterCategory('ai')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200">الذكاء الاصطناعي</button>
+            <!-- Empty State -->
+            <div id="empty-state" class="hidden text-center py-20">
+                <i class="fa-solid fa-folder-open text-5xl text-slate-700 mb-4"></i>
+                <h3 class="text-lg font-bold text-slate-300">لم يتم العثور على مقالات</h3>
+                <p class="text-sm text-slate-500 mt-1">جرب البحث بكلمات مفتاحية أخرى أو تغيير التصنيف.</p>
             </div>
-        </div>
+        </section>
 
-        <!-- Search input for mobile inside section -->
-        <div class="mb-8 sm:hidden">
-            <div class="relative">
-                <input type="text" id="search-input-mobile" onkeyup="searchArticlesMobile()" placeholder="ابحث عن مقال..." class="w-full bg-slate-900/80 border border-slate-700/50 rounded-xl py-3 pr-10 pl-4 text-xs focus:outline-none focus:border-accent-sky text-slate-200">
-                <span class="absolute right-3.5 top-3.5 text-slate-400 text-xs"><i class="fa-solid fa-magnifying-glass"></i></span>
-            </div>
-        </div>
+        <!-- Interactive Reader Modal (Dynamic Article Detail) -->
+        <div id="reader-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <!-- Backdrop -->
+            <div class="fixed inset-0 bg-slate-950/90 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
 
-        <!-- Articles Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
-            <!-- Article cards will be injected here dynamically via JS -->
-        </div>
-        
-        <!-- Empty State -->
-        <div id="empty-state" class="hidden text-center py-20">
-            <i class="fa-solid fa-folder-open text-5xl text-slate-700 mb-4"></i>
-            <h3 class="text-lg font-bold text-slate-300">لم يتم العثور على مقالات</h3>
-            <p class="text-sm text-slate-500 mt-1">جرب البحث بكلمات مفتاحية أخرى أو تغيير التصنيف.</p>
-        </div>
-    </section>
-
-    <!-- Interactive Reader Modal (Dynamic Article Detail) -->
-    <div id="reader-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <!-- Backdrop -->
-        <div class="fixed inset-0 bg-slate-950/90 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
-
-        <!-- Modal Content Container -->
-        <div class="flex min-h-screen items-center justify-center p-4 sm:p-6 lg:p-8">
-            <div class="relative transform overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 text-right shadow-2xl transition-all w-full max-w-4xl my-8">
-                
-                <!-- Close Button & Sticky Top Bar -->
-                <div class="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-md border-b border-slate-800/60">
-                    <span id="modal-category" class="px-3 py-1 rounded-full text-xs font-semibold bg-accent-sky/10 text-accent-sky"></span>
-                    <button onclick="closeModal()" class="text-slate-400 hover:text-slate-50 p-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors">
-                        <i class="fa-solid fa-xmark text-lg"></i>
-                    </button>
-                </div>
-
-                <!-- Article Body Container -->
-                <div class="px-6 py-8 sm:px-10 sm:py-10 max-h-[80vh] overflow-y-auto" id="modal-body-container">
-                    <!-- Title -->
-                    <h1 id="modal-title" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-50 leading-tight mb-4"></h1>
+            <!-- Modal Content Container -->
+            <div class="flex min-h-screen items-center justify-center p-4 sm:p-6 lg:p-8">
+                <div class="relative transform overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 text-right shadow-2xl transition-all w-full max-w-4xl my-8">
                     
-                    <!-- Metadata -->
-                    <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 mb-8 pb-6 border-b border-slate-800/60">
-                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar-days"></i> <span id="modal-date"></span></span>
-                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock"></i> <span id="modal-readtime"></span></span>
-                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-user"></i> الكاتب: فريق تِكْسِلْ</span>
-                    </div>
-
-                    <!-- Dynamic HTML Content -->
-                    <div id="modal-article-content" class="prose prose-invert prose-sky max-w-none text-slate-300 leading-relaxed space-y-6 text-sm sm:text-base">
-                        <!-- Content injected dynamically -->
-                    </div>
-                </div>
-
-                <!-- Footer Action -->
-                <div class="px-6 py-4 bg-slate-900/90 border-t border-slate-800/60 flex items-center justify-between">
-                    <div class="flex gap-3">
-                        <button onclick="shareArticle()" class="text-xs font-semibold text-slate-400 hover:text-accent-sky flex items-center gap-1.5 bg-slate-800/50 px-3 py-2 rounded-lg transition-colors">
-                            <i class="fa-solid fa-share-nodes"></i> مشاركة المقال
+                    <!-- Close Button & Sticky Top Bar -->
+                    <div class="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-md border-b border-slate-800/60">
+                        <span id="modal-category" class="px-3 py-1 rounded-full text-xs font-semibold bg-accent-sky/10 text-accent-sky"></span>
+                        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-50 p-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors" aria-label="إغلاق نافذة القراءة">
+                            <i class="fa-solid fa-xmark text-lg"></i>
                         </button>
                     </div>
-                    <button onclick="closeModal()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl transition-colors">
-                        إغلاق القارئ
+
+                    <!-- Article Body Container -->
+                    <div class="px-6 py-8 sm:px-10 sm:py-10 max-h-[80vh] overflow-y-auto" id="modal-body-container">
+                        <!-- Featured Image inside Modal -->
+                        <div class="relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden mb-8 shadow-lg">
+                            <img id="modal-featured-image" src="" alt="" width="800" height="450" class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- Title -->
+                        <h1 id="modal-title" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-50 leading-tight mb-4"></h1>
+                        
+                        <!-- Metadata -->
+                        <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 mb-8 pb-6 border-b border-slate-800/60">
+                            <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar-days"></i> <span id="modal-date"></span></span>
+                            <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock"></i> <span id="modal-readtime"></span></span>
+                            <span class="flex items-center gap-1.5"><i class="fa-regular fa-user"></i> الكاتب: فريق تِكْسِلْ</span>
+                        </div>
+
+                        <!-- Dynamic HTML Content -->
+                        <div id="modal-article-content" class="prose prose-invert prose-sky max-w-none text-slate-300 leading-relaxed space-y-6 text-sm sm:text-base">
+                            <!-- Content injected dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Footer Action -->
+                    <div class="px-6 py-4 bg-slate-900/90 border-t border-slate-800/60 flex items-center justify-between">
+                        <div class="flex gap-3">
+                            <button onclick="shareArticle()" class="text-xs font-semibold text-slate-400 hover:text-accent-sky flex items-center gap-1.5 bg-slate-800/50 px-3 py-2 rounded-lg transition-colors" aria-label="مشاركة هذا المقال">
+                                <i class="fa-solid fa-share-nodes"></i> مشاركة المقال
+                            </button>
+                        </div>
+                        <button onclick="closeModal()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl transition-colors">
+                            إغلاق القارئ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter Section -->
+        <section id="newsletter-section" class="py-20 bg-slate-900/30 border-t border-b border-slate-900 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="w-16 h-16 rounded-2xl bg-accent-sky/10 border border-accent-sky/20 flex items-center justify-center text-accent-sky text-2xl mx-auto mb-6">
+                    <i class="fa-regular fa-envelope-open"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-100 mb-4">انضم إلى مجتمع النخبة التقنية</h2>
+                <p class="text-sm sm:text-base text-slate-400 mb-8 max-w-lg mx-auto leading-relaxed">
+                    نرسل مقالاً واحداً فائق الجودة أسبوعياً. لا رسائل مزعجة، لا حشو، فقط معرفة هندسية خالصة قابلة للتطبيق مباشرة في بريدك الإلكتروني.
+                </p>
+                <form id="newsletter-form" onsubmit="handleSubscribe(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <input type="email" required placeholder="عنوان بريدك الإلكتروني التقني..." aria-label="البريد الإلكتروني للاشتراك" class="flex-grow bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent-sky text-slate-200">
+                    <button type="submit" class="bg-gradient-to-r from-accent-sky to-accent-emerald text-slate-950 font-bold px-6 py-3 rounded-xl text-sm hover:opacity-90 transition-opacity" aria-label="تأكيد الاشتراك في النشرة البريدية">
+                        اشترك الآن
                     </button>
-                </div>
+                </form>
+                <p id="subscribe-success" class="text-accent-emerald text-xs mt-3 hidden"><i class="fa-solid fa-circle-check"></i> شكرًا لاشتراكك! لقد تم تسجيل بريدك بنجاح.</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Newsletter Section -->
-    <section id="newsletter-section" class="py-20 bg-slate-900/30 border-t border-b border-slate-900 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="w-16 h-16 rounded-2xl bg-accent-sky/10 border border-accent-sky/20 flex items-center justify-center text-accent-sky text-2xl mx-auto mb-6">
-                <i class="fa-regular fa-envelope-open"></i>
+        <!-- About Section -->
+        <section id="about-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs font-bold text-accent-emerald uppercase tracking-widest">فلسفتنا التحريرية</span>
+                    <h2 class="text-3xl font-bold text-slate-100 mt-2 mb-6">لماذا تِكْسِلْ؟</h2>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                        في عالم مزدحم بالمحتوى السطحي والمعاد تدويره، نؤمن بأن المهندس والمطور العربي يستحق مصدراً رصيناً يتعمق في البنى التحتية، الأتمتة المتقدمة، وهندسة النظم.
+                    </p>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                        كل مقال ننشره يمر بمراحل من التدقيق الهندسي، والتحقق من الأكواد البرمجية، لنضمن لك تجربة قراءة غنية تضيف قيمة حقيقية لحياتك المهنية والتقنية.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800/60">
+                            <div class="text-2xl font-bold text-accent-sky">100%</div>
+                            <div class="text-[10px] text-slate-500 mt-1">محتوى حصري وعميق</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800/60">
+                            <div class="text-2xl font-bold text-accent-emerald">Zero</div>
+                            <div class="text-[10px] text-slate-500 mt-1">حشو ولوريم إيبسوم</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800/60">
+                            <div class="text-2xl font-bold text-accent-purple">Ready</div>
+                            <div class="text-[10px] text-slate-500 mt-1">أكواد جاهزة للإنتاج</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-accent-sky/10 to-transparent rounded-3xl blur-2xl"></div>
+                    <div class="relative bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl">
+                        <h3 class="text-xl font-bold text-slate-100 mb-4">مجالات التغطية الأساسية</h3>
+                        <ul class="space-y-4 text-sm text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent-sky text-lg mt-0.5"><i class="fa-solid fa-circle-nodes"></i></span>
+                                <div>
+                                    <strong class="text-slate-100 block">هندسة الأتمتة والـ Serverless</strong>
+                                    بناء أنظمة ذكية ذاتية العمل بتكلفة تشغيل صفرية لتعظيم العوائد السلبية.
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent-emerald text-lg mt-0.5"><i class="fa-solid fa-chart-line"></i></span>
+                                <div>
+                                    <strong class="text-slate-100 block">الاستثمار في الأصول الرقمية</strong>
+                                    استراتيجيات تقييم واستغلال النطاقات والبرمجيات كأصول عالية القيمة.
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent-purple text-lg mt-0.5"><i class="fa-solid fa-terminal"></i></span>
+                                <div>
+                                    <strong class="text-slate-100 block">تقنيات الويب الحديثة والـ Wasm</strong>
+                                    تشغيل اللغات المعقدة كبايثون ورست مباشرة في المتصفح بكفاءة عالية.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-100 mb-4">انضم إلى مجتمع النخبة التقنية</h2>
-            <p class="text-sm sm:text-base text-slate-400 mb-8 max-w-lg mx-auto leading-relaxed">
-                نرسل مقالاً واحداً فائق الجودة أسبوعياً. لا رسائل مزعجة، لا حشو، فقط معرفة هندسية خالصة قابلة للتطبيق مباشرة في بريدك الإلكتروني.
-            </p>
-            <form id="newsletter-form" onsubmit="handleSubscribe(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input type="email" required placeholder="عنوان بريدك الإلكتروني التقني..." class="flex-grow bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent-sky text-slate-200">
-                <button type="submit" class="bg-gradient-to-r from-accent-sky to-accent-emerald text-slate-950 font-bold px-6 py-3 rounded-xl text-sm hover:opacity-90 transition-opacity">
-                    اشترك الآن
-                </button>
-            </form>
-            <p id="subscribe-success" class="text-accent-emerald text-xs mt-3 hidden"><i class="fa-solid fa-circle-check"></i> شكرًا لاشتراكك! لقد تم تسجيل بريدك بنجاح.</p>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="text-xs font-bold text-accent-emerald uppercase tracking-widest">فلسفتنا التحريرية</span>
-                <h2 class="text-3xl font-bold text-slate-100 mt-2 mb-6">لماذا تِكْسِلْ؟</h2>
-                <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
-                    في عالم مزدحم بالمحتوى السطحي والمعاد تدويره، نؤمن بأن المهندس والمطور العربي يستحق مصدراً رصيناً يتعمق في البنى التحتية، الأتمتة المتقدمة، وهندسة النظم.
-                </p>
-                <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
-                    كل مقال ننشره يمر بمراحل من التدقيق الهندسي، والتحقق من الأكواد البرمجية، لنضمن لك تجربة قراءة غنية تضيف قيمة حقيقية لحياتك المهنية والتقنية.
-                </p>
-                <div class="grid grid-cols-3 gap-4 text-center">
-                    <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800/60">
-                        <div class="text-2xl font-bold text-accent-sky">100%</div>
-                        <div class="text-[10px] text-slate-500 mt-1">محتوى حصري وعميق</div>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800/60">
-                        <div class="text-2xl font-bold text-accent-emerald">Zero</div>
-                        <div class="text-[10px] text-slate-500 mt-1">حشو ولوريم إيبسوم</div>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800/60">
-                        <div class="text-2xl font-bold text-accent-purple">Ready</div>
-                        <div class="text-[10px] text-slate-500 mt-1">أكواد جاهزة للإنتاج</div>
-                    </div>
-                </div>
-            </div>
-            <div class="relative">
-                <div class="absolute inset-0 bg-gradient-to-tr from-accent-sky/10 to-transparent rounded-3xl blur-2xl"></div>
-                <div class="relative bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl">
-                    <h3 class="text-xl font-bold text-slate-100 mb-4">مجالات التغطية الأساسية</h3>
-                    <ul class="space-y-4 text-sm text-slate-300">
-                        <li class="flex items-start gap-3">
-                            <span class="text-accent-sky text-lg mt-0.5"><i class="fa-solid fa-circle-nodes"></i></span>
-                            <div>
-                                <strong class="text-slate-100 block">هندسة الأتمتة والـ Serverless</strong>
-                                بناء أنظمة ذكية ذاتية العمل بتكلفة تشغيل صفرية لتعظيم العوائد السلبية.
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-accent-emerald text-lg mt-0.5"><i class="fa-solid fa-chart-line"></i></span>
-                            <div>
-                                <strong class="text-slate-100 block">الاستثمار في الأصول الرقمية</strong>
-                                استراتيجيات تقييم واستغلال النطاقات والبرمجيات كأصول عالية القيمة.
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-accent-purple text-lg mt-0.5"><i class="fa-solid fa-terminal"></i></span>
-                            <div>
-                                <strong class="text-slate-100 block">تقنيات الويب الحديثة والـ Wasm</strong>
-                                تشغيل اللغات المعقدة كبايثون ورست مباشرة في المتصفح بكفاءة عالية.
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-slate-950 border-t border-slate-900 py-12">
@@ -318,12 +341,13 @@
                     <a href="#about-section" class="hover:text-accent-sky transition-colors">فلسفتنا</a>
                 </div>
                 <div class="flex gap-4 text-slate-400 text-lg">
-                    <a href="#" class="hover:text-accent-sky transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="hover:text-accent-sky transition-colors"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="hover:text-accent-sky transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-accent-sky transition-colors" aria-label="تابعنا على منصة إكس"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-accent-sky transition-colors" aria-label="تابعنا على جيت هاب"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="hover:text-accent-sky transition-colors" aria-label="تابعنا على لينكد إن"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
-            <p class="text-center text-xs text-slate-600 mt-8">
+            <!-- Improved contrast text-slate-600 to text-slate-400 -->
+            <p class="text-center text-xs text-slate-400 mt-8">
                 &copy; <span id="current-year"></span> منصة تِكْسِلْ. جميع الحقوق محفوظة. صُمم بكل شغف للمجتمع التقني العربي الراقي.
             </p>
         </div>
@@ -334,7 +358,7 @@
         // Set dynamic current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // 5 Real, Deep-dive Technical Articles
+        // 5 Real, Deep-dive Technical Articles with Featured Images
         const articles = [
             {
                 id: 1,
@@ -345,24 +369,30 @@
                 readTime: "9 دقائق قراءة",
                 date: "14 أكتوبر 2023",
                 icon: "fa-solid fa-bolt",
+                featuredImage: {
+                    url: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    alt: "خوادم سحابية وأكواد برمجية تمثل الأتمتة السحابية",
+                    width: 800,
+                    height: 450
+                },
                 content: `
-                    <p class="text-lg text-slate-300 font-semibold mb-6">
+                    <p class="text-lg text-slate-300 font-semibold mb-6 leading-relaxed">
                         تعد هندسة "الخوادم الصفرية" (Serverless) واحدة من أعظم التحولات المعمارية في هندسة البرمجيات المعاصرة. لم تعد الفكرة مقتصرة على توفير تكاليف الاستضافة للشركات الضخمة فحسب، بل أصبحت السلاح السري للمطورين الأفراد لبناء مشاريع سلبية (Passive Projects) تدر عوائد مستمرة وتعمل بكفاءة مطلقة دون الحاجة لإدارة خادم واحد أو دفع فواتير شهرية ثابتة.
                     </p>
                     
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">لماذا الـ Serverless هو الخيار الأمثل للأتمتة؟</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">لماذا الـ Serverless هو الخيار الأمثل للأتمتة؟</h2>
+                    <p class="mb-4 leading-relaxed">
                         في المعمارية التقليدية، تحتاج إلى حجز خادم VPS (مثل DigitalOcean أو AWS EC2) بقيمة تبدأ من 5$ شهرياً، وتثبيت نظام التشغيل، وقواعد البيانات، وإعداد الـ Cron Jobs. هذه الطريقة تفرض عليك تكلفة ثابتة سواء استخدم مشروعك 1% من قدرة الخادم أو 100%، ناهيك عن ثغرات الأمان وإدارة التحديثات.
                     </p>
-                    <p class="mb-4">
+                    <p class="mb-4 leading-relaxed">
                         في المقابل، توفر منصات مثل <strong>Cloudflare Workers</strong> و <strong>Vercel Functions</strong> و <strong>Supabase</strong> بيئات تشغيل تعتمد على الحدث (Event-Driven). تدفع فقط مقابل أجزاء من الثانية التي يعمل فيها الكود الخاص بك، ومع خطط الاستخدام المجانية السخية، يمكنك تشغيل مئات الآلاف من الطلبات شهرياً مجاناً تماماً.
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">هيكلية مشروع أتمتة سلبي ذو تكلفة صفرية</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">هيكلية مشروع أتمتة سلبي ذو تكلفة صفرية</h2>
+                    <p class="mb-4 leading-relaxed">
                         لنفترض أننا نريد بناء نظام يقوم بجمع أسعار العملات الرقمية وتحليلها بواسطة الذكاء الاصطناعي، ثم إرسال تقرير يومي للمشتركين عبر البريد الإلكتروني وتغريدة آلية على منصة X. سنحتاج إلى الأدوات التالية:
                     </p>
-                    <ul class="list-disc list-inside space-y-2 mb-6 text-slate-300 pr-4">
+                    <ul class="list-disc list-inside space-y-2 mb-6 text-slate-300 pr-4 leading-relaxed">
                         <li><strong>Cloudflare Workers (Cron Triggers):</strong> لتشغيل الكود تلقائياً كل 24 ساعة.</li>
                         <li><strong>Supabase (Free Tier Database):</strong> لتخزين البيانات التاريخية للمشتركين والتحليلات.</li>
                         <li><strong>CoinGecko API (Free):</strong> لجلب بيانات الأسعار اللحظية.</li>
@@ -370,8 +400,8 @@
                         <li><strong>Resend API (Free 3,000 emails/month):</strong> لإرسال البريد الإلكتروني للمشتركين.</li>
                     </ul>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">الكود المصدري النموذجي لـ Cloudflare Worker</h3>
-                    <p class="mb-4">إليك كيف تبدو بنية الكود البرمجي لـ Cloudflare Worker يقوم بجدولة الأتمتة:</p>
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الكود المصدري النموذجي لـ Cloudflare Worker</h2>
+                    <p class="mb-4 leading-relaxed">إليك كيف تبدو بنية الكود البرمجي لـ Cloudflare Worker يقوم بجدولة الأتمتة:</p>
                     
                     <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm font-mono text-accent-sky overflow-x-auto dir-ltr text-left mb-6">
 export default {
@@ -401,8 +431,8 @@ async function triggerAutomationPipeline(env) {
 }
                     </pre>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة والآفاق المستقبلية</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة والآفاق المستقبلية</h2>
+                    <p class="mb-4 leading-relaxed">
                         الحدود الوحيدة لما يمكنك بناؤه باستخدام الأتمتة الخالية من السيرفرات هي حدود خيالك. من مراقبة أسعار العقارات، إلى فحص النطاقات المميزة المتاحة للتسجيل، وحتى إدارة منصات محتوى كاملة تلقائياً. الأتمتة هي الرافعة المالية والزمنية الحقيقية للمطور العصري.
                     </p>
                 `
@@ -416,31 +446,37 @@ async function triggerAutomationPipeline(env) {
                 readTime: "8 دقائق قراءة",
                 date: "05 نوفمبر 2023",
                 icon: "fa-solid fa-globe",
+                featuredImage: {
+                    url: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    alt: "اجتماع عمل رقمي يمثل استثمار النطاقات والأصول الرقمية",
+                    width: 800,
+                    height: 450
+                },
                 content: `
-                    <p class="text-lg text-slate-300 font-semibold mb-6">
+                    <p class="text-lg text-slate-300 font-semibold mb-6 leading-relaxed">
                         يعتبر الاستثمار في أسماء النطاقات (Domain Flipping) بمثابة الاستثمار في العقارات الرقمية. النطاق المميز والسهل الحفظ هو أصل رقمي نادر لا يمكن تكراره. ولكن، شراء النطاق وتركه معلقاً في صفحة بيع فارغة لم يعد كافياً اليوم للحصول على عروض شراء ضخمة. السر يكمن في "التطوير الميكروي" (Domain Development).
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">مفهوم تعظيم قيمة النطاق (Value-Add Domain Flipping)</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">مفهوم تعظيم قيمة النطاق (Value-Add Domain Flipping)</h2>
+                    <p class="mb-4 leading-relaxed">
                         بدلاً من عرض النطاق للبيع كاسم مجرد، يقوم المستثمر الذكي ببناء تطبيق ويب مصغر (Micro-SaaS) أو صفحة هبوط تفاعلية فائقة الجمال على هذا النطاق مستخدماً أدوات الـ Open Source. عندما يرى المشتري المحتمل النطاق وهو يعمل كأداة حية ولها زوار، ترتفع القيمة التقديرية للنطاق من 100 دولار إلى آلاف الدولارات.
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">خطوات عملية لتطبيق الاستراتيجية</h3>
-                    <ol class="list-decimal list-inside space-y-3 mb-6 text-slate-300 pr-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">خطوات عملية لتطبيق الاستراتيجية</h2>
+                    <ol class="list-decimal list-inside space-y-3 mb-6 text-slate-300 pr-4 leading-relaxed">
                         <li><strong>اقتناص النطاق المميز:</strong> ابحث عن نطاقات منتهية الصلاحية (Expired Domains) تحتوي على كلمات مفتاحية ذات قيمة عالية في قطاعات الأتمتة، الذكاء الاصطناعي، أو التمويل.</li>
                         <li><strong>بناء أداة مصغرة (Micro Tool):</strong> قم ببرمجة أداة بسيطة جداً مثل (مُولد وسوم، حاسبة ضرائب رقمية، أو محول صيغ ملفات) باستخدام HTML/JS بسيط مستضاف على Netlify أو Vercel مجاناً.</li>
                         <li><strong>تحسين السيو المحلي (SEO):</strong> استهدف الكلمات الدلالية المرتبطة باسم النطاق ليظهر في نتائج البحث الأولى سريعاً.</li>
                         <li><strong>حزم المشروع كاملاً:</strong> اعرض النطاق للبيع على منصات مثل Acquire.com أو Flippa كـ "مشروع متكامل جاهز للتشغيل مع الكود المصدري وقاعدة البيانات" وليس مجرد اسم نطاق جاف.</li>
                     </ol>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">مثال حي: كيف تم بيع نطاق بـ 4500$؟</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">مثال حي: كيف تم بيع نطاق بـ 4500$؟</h2>
+                    <p class="mb-4 leading-relaxed">
                         أحد المطورين قام بشراء النطاق <code class="bg-slate-800 text-accent-sky px-1.5 py-0.5 rounded font-mono">PDFCompress.tech</code> بـ 10 دولارات فقط. قام بربط النطاق بتطبيق ويب بسيط مبني بجافاسكريبت يقوم بضغط ملفات الـ PDF محلياً في متصفح المستخدم دون الحاجة لسيرفر (Client-side compression). بعد الحصول على 500 زائر شهرياً من محركات البحث، قام ببيع الموقع كاملاً على منصة Flippa بمبلغ 4500 دولار، حيث رأى المشتري أنه اشترى عملاً تجارياً جاهزاً وليس مجرد اسم.
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة</h2>
+                    <p class="mb-4 leading-relaxed">
                         الدمج بين مهارات التطوير البرمجي البسيط واستثمار الأصول الرقمية يمنحك تفوقاً هائلاً على المستثمرين التقليديين. ابنِ قيمة حقيقية، وسيتسابق المشترون على دفع الثمن الذي تستحقه.
                     </p>
                 `
@@ -454,18 +490,24 @@ async function triggerAutomationPipeline(env) {
                 readTime: "11 دقيقة قراءة",
                 date: "28 نوفمبر 2023",
                 icon: "fa-solid fa-microchip",
+                featuredImage: {
+                    url: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    alt: "شاشة برمجية مظلمة تمثل ثورة الويب المتقدم والبرمجة",
+                    width: 800,
+                    height: 450
+                },
                 content: `
-                    <p class="text-lg text-slate-300 font-semibold mb-6">
+                    <p class="text-lg text-slate-300 font-semibold mb-6 leading-relaxed">
                         لعقود طويلة، احتكرت لغة جافاسكريبت المتصفح بالكامل. لكن مع ظهور تقنية <strong>WebAssembly (Wasm)</strong>، تكسرت هذه القيود. أصبح بإمكان المطورين تجميع لغات برمجية قوية مثل Rust و C++ وبايثون إلى كود ثنائي (Binary) يعمل داخل المتصفح بسرعة تقارب سرعة التطبيقات الأصلية (Native Speed).
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">ما هو PyScript ولماذا يمثل ثورة؟</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">ما هو PyScript ولماذا يمثل ثورة؟</h2>
+                    <p class="mb-4 leading-relaxed">
                         مشروع <strong>PyScript</strong> هو إطار عمل يسمح للمطورين بكتابة وتشغيل كود بايثون مباشرة داخل مستند الـ HTML العادي. لا تحتاج إلى تثبيت بايثون على جهازك، ولا تحتاج لخادم Django أو Flask لمعالجة البيانات. كل شيء يتم تنفيذه محلياً في متصفح المستخدم النهائي باستخدام قوة الـ WebAssembly.
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">بنية صفحة HTML تعمل ببايثون بالكامل</h3>
-                    <p class="mb-4">إليك هذا المثال الحي لكيفية تضمين بايثون وتشغيل مكتبة معالجة البيانات الشهيرة <code class="bg-slate-800 text-accent-sky px-1.5 py-0.5 rounded font-mono">numpy</code> داخل المتصفح مباشرة:</p>
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">بنية صفحة HTML تعمل ببايثون بالكامل</h2>
+                    <p class="mb-4 leading-relaxed">إليك هذا المثال الحي لكيفية تضمين بايثون وتشغيل مكتبة معالجة البيانات الشهيرة <code class="bg-slate-800 text-accent-sky px-1.5 py-0.5 rounded font-mono">numpy</code> داخل المتصفح مباشرة:</p>
 
                     <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm font-mono text-accent-sky overflow-x-auto dir-ltr text-left mb-6">
 &lt;!DOCTYPE html&gt;
@@ -492,18 +534,18 @@ print("مجموع المصفوفة باستخدام NumPy هو:", np.sum(arr))
 &lt;/html&gt;
                     </pre>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">الفوائد الهندسية لهذه المعمارية</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الفوائد الهندسية لهذه المعمارية</h2>
+                    <p class="mb-4 leading-relaxed">
                         الاعتماد على المتصفح لتشغيل خوارزميات الذكاء الاصطناعي ومعالجة البيانات يمنح المطورين فوائد مذهلة:
                     </p>
-                    <ul class="list-disc list-inside space-y-2 mb-6 text-slate-300 pr-4">
+                    <ul class="list-disc list-inside space-y-2 mb-6 text-slate-300 pr-4 leading-relaxed">
                         <li><strong>تخفيض تكاليف الخوادم إلى الصفر:</strong> بدلاً من دفع مبالغ طائلة لمعالجة البيانات في خوادمك السحابية، يقوم جهاز المستخدم (المتصفح) بكل العمل الشاق.</li>
                         <li><strong>خصوصية مطلقة للبيانات:</strong> لا حاجة لرفع ملفات المستخدم الحساسة إلى السيرفر لمعالجتها، فالمعالجة تتم محلياً بالكامل.</li>
                         <li><strong>تجربة مستخدم فورية:</strong> لا وجود لوقت استجابة الشبكة (Latency) أثناء معالجة البيانات، مما يجعل التطبيق فائق السرعة.</li>
                     </ul>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة</h2>
+                    <p class="mb-4 leading-relaxed">
                         الويب يتطور بسرعة مذهلة. لم يعد المتصفح مجرد مستعرض لصفحات ثابتة، بل تحول إلى نظام تشغيل متكامل قادر على تشغيل أثقل الخوارزميات البرمجية بمرونة وكفاءة غير مسبوقة.
                     </p>
                 `
@@ -517,37 +559,43 @@ print("مجموع المصفوفة باستخدام NumPy هو:", np.sum(arr))
                 readTime: "7 دقائق قراءة",
                 date: "12 ديسمبر 2023",
                 icon: "fa-solid fa-shield-halved",
+                featuredImage: {
+                    url: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    alt: "قفل أمان رقمي يمثل حماية الخصوصية والأمان السيبراني",
+                    width: 800,
+                    height: 450
+                },
                 content: `
-                    <p class="text-lg text-slate-300 font-semibold mb-6">
+                    <p class="text-lg text-slate-300 font-semibold mb-6 leading-relaxed">
                         في عصر أصبحت فيه اختراقات البيانات وتسريب الخصوصية خبراً شبه يومي، بدأ يظهر تيار تقني ثوري يقوده كبار المطورين تحت شعار <strong>Local-First Software</strong> (البرمجيات المحلية أولاً). الفكرة بسيطة ولكنها تغير قواعد اللعبة: البيانات ملك للمستخدم، ويجب أن تُخزن وتُعالج على جهازه أولاً، وتكون المزامنة السحابية خياراً ثانوياً ومشفراً بالكامل.
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">ما هي فلسفة Local-First؟</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">ما هي فلسفة Local-First؟</h2>
+                    <p class="mb-4 leading-relaxed">
                         التطبيقات التقليدية (Cloud-First) مثل Notion أو Google Docs لا تعمل تقريباً بدون اتصال بالإنترنت، وأي عطل في خوادمهم يعني توقف عملك بالكامل. أما تطبيقات Local-First، فهي تعمل بكفاءة 100% دون إنترنت، وتخزن البيانات في قاعدة بيانات محلية داخل المتصفح أو الجهاز (مثل IndexedDB أو SQLite local). وعند توفر الإنترنت، تتم مزامنة البيانات عبر بروتوكولات ند لند (P2P) أو خوادم وسيطة مشفرة من الطرفين (End-to-End Encrypted).
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">التقنيات الأساسية لبناء تطبيقات Local-First</h3>
-                    <p class="mb-4">لبناء تطبيق ويب يحترم الخصوصية ويعمل محلياً، نعتمد على ترسانة من التقنيات الحديثة:</p>
-                    <ul class="list-disc list-inside space-y-2 mb-6 text-slate-300 pr-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">التقنيات الأساسية لبناء تطبيقات Local-First</h2>
+                    <p class="mb-4 leading-relaxed">لبناء تطبيق ويب يحترم الخصوصية ويعمل محلياً، نعتمد على ترسانة من التقنيات الحديثة:</p>
+                    <ul class="list-disc list-inside space-y-2 mb-6 text-slate-300 pr-4 leading-relaxed">
                         <li><strong>CRDTs (Conflict-free Replicated Data Types):</strong> خوارزميات رياضية تتيح دمج البيانات وتحديثها من أجهزة متعددة دون حدوث تعارض (Conflicts).</li>
                         <li><strong>RxDB / Yjs:</strong> مكتبات جافاسكريبت قوية جداً لإدارة قواعد البيانات المحلية والمزامنة الفورية.</li>
                         <li><strong>WebRTC:</strong> لتمكين الأجهزة من تبادل البيانات والمزامنة مباشرة بين بعضها البعض دون المرور بسيرفر مركزي.</li>
                     </ul>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">الفوائد الثلاث الكبرى للمطور والمستخدم</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الفوائد الثلاث الكبرى للمطور والمستخدم</h2>
+                    <p class="mb-4 leading-relaxed">
                         <strong>1. سرعة استجابة مذهلة (Instant UI):</strong> نظراً لأن القراءة والكتابة تتمان على القرص الصلب للجهاز مباشرة، فإن زمن الاستجابة هو صفر ملي ثانية. لا وجود لدوائر التحميل اللانهائية.
                     </p>
-                    <p class="mb-4">
+                    <p class="mb-4 leading-relaxed">
                         <strong>2. أمان ومقاومة للأعطال:</strong> حتى لو أفلست الشركة المطورة للتطبيق وأغلقت خوادمها، سيستمر التطبيق بالعمل لدى المستخدمين مدى الحياة لأن كود التشغيل والبيانات بحوزتهم بالكامل.
                     </p>
-                    <p class="mb-4">
+                    <p class="mb-4 leading-relaxed">
                         <strong>3. تقليص هائل لتكلفة البنية التحتية:</strong> لا يحتاج المطور لاستئجار سيرفرات ضخمة لمعالجة وتخزين بيانات ملايين المستخدمين، مما يجعل تكلفة تشغيل المشروع قريبة جداً من الصفر.
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة</h2>
+                    <p class="mb-4 leading-relaxed">
                         سيادة الخصوصية ليست مجرد ميزة تسويقية، بل هي معيار الجودة الجديد للبرمجيات في العقد القادم. المطورون الذين يتقنون بناء تطبيقات Local-First هم من سيقودون سوق البرمجيات الآمنة والموثوقة.
                     </p>
                 `
@@ -561,29 +609,35 @@ print("مجموع المصفوفة باستخدام NumPy هو:", np.sum(arr))
                 readTime: "10 دقائق قراءة",
                 date: "20 ديسمبر 2023",
                 icon: "fa-solid fa-brain",
+                featuredImage: {
+                    url: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    alt: "روبوت ذكاء اصطناعي يمثل التكنولوجيا التوليدية وهندسة المطالبات",
+                    width: 800,
+                    height: 450
+                },
                 content: `
-                    <p class="text-lg text-slate-300 font-semibold mb-6">
+                    <p class="text-lg text-slate-300 font-semibold mb-6 leading-relaxed">
                         لم يعد الذكاء الاصطناعي التوليدي مجرد أداة نطلب منها كتابة نكتة أو صياغة رسالة بريد إلكتروني. في قطاع الأعمال الرقمي، يمثل الذكاء الاصطناعي المدمج عبر الـ APIs محركاً هائلاً لإنتاج القيمة وأتمتة العمليات الإبداعية بالكامل وبجودة تضاهي العمل البشري إذا تم توظيفه هندسياً بشكل صحيح.
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">ما هي هندسة المطالبات (Prompt Engineering) الحقيقية؟</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">ما هي هندسة المطالبات (Prompt Engineering) الحقيقية؟</h2>
+                    <p class="mb-4 leading-relaxed">
                         هندسة المطالبات ليست مجرد كتابة "اكتب لي مقالاً عن الذكاء الاصطناعي". في الأنظمة الاحترافية، نقوم ببناء مطالبات هيكلية (Structured Prompts) تحتوي على أدوار محددة (System Prompts)، وسياق غني (Context)، ومحددات مخرجات دقيقة (Output Formats) مثل إجبار النموذج على إرجاع البيانات بصيغة JSON نظيفة لسهولة معالجتها برمجياً.
                     </p>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">هيكلية نظام إنتاج المحتوى الآلي بالكامل</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">هيكلية نظام إنتاج المحتوى الآلي بالكامل</h2>
+                    <p class="mb-4 leading-relaxed">
                         لإنشاء نظام ينشر مقالاً تقنياً وصورة تعبيرية عالية الجودة كل 24 ساعة تلقائياً، نقوم بتصميم خط الإنتاج (Pipeline) التالي:
                     </p>
-                    <ol class="list-decimal list-inside space-y-3 mb-6 text-slate-300 pr-4">
+                    <ol class="list-decimal list-inside space-y-3 mb-6 text-slate-300 pr-4 leading-relaxed">
                         <li><strong>مرحلة العصف الذهني (Idea Generation):</strong> يستعلم كود الأتمتة من API لـ GPT-4 لاقتراح 5 عناوين مقالات فريدة بناءً على التريندات الحالية في غوغل تريندز.</li>
                         <li><strong>مرحلة الكتابة والتدقيق (Drafting & Review):</strong> يقوم وكيل ذكاء اصطناعي أول (Writer Agent) بكتابة المسودة، ثم يقوم وكيل ثانٍ (Editor Agent) بمراجعتها وتدقيقها لغوياً وتقنياً.</li>
                         <li><strong>مرحلة توليد الصور (Visual Generation):</strong> يتم إرسال ملخص المقال إلى Midjourney أو DALL-E 3 API لتوليد غلاف فني متناسق مع الألوان العامة للموقع.</li>
                         <li><strong>مرحلة النشر التلقائي (Auto-Publishing):</strong> يتم دفع المقال والصورة عبر REST API إلى نظام إدارة المحتوى (مثل WordPress أو Headless CMS) وجدولته للنشر الفوري.</li>
                     </ol>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">نموذج لمطالبة (Prompt) برمجية لإنتاج JSON</h3>
-                    <p class="mb-4">إليك كيف نصيغ المطالبة البرمجية لضمان الحصول على استجابة برمجية مستقرة:</p>
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">نموذج لمطالبة (Prompt) برمجية لإنتاج JSON</h2>
+                    <p class="mb-4 leading-relaxed">إليك كيف نصيغ المطالبة البرمجية لضمان الحصول على استجابة برمجية مستقرة:</p>
 
                     <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm font-mono text-accent-sky overflow-x-auto dir-ltr text-left mb-6">
 const systemPrompt = \`
@@ -598,8 +652,8 @@ Do not include any conversational text, markdown blocks, or explanations outside
 \`;
                     </pre>
 
-                    <h3 class="text-xl font-bold text-slate-100 mt-8 mb-4">التحذير الأخلاقي والمهني</h3>
-                    <p class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">التحذير الأخلاقي والمهني</h2>
+                    <p class="mb-4 leading-relaxed">
                         رغم القوة الهائلة للأتمتة، إلا أن "اللمسة البشرية" تظل صمام الأمان لمنع تلوث الويب بمحتوى مكرر وبلا روح. أفضل الأنظمة الهجينة هي التي تقوم بالأتمتة بنسبة 80% (البحث، التجميع، المسودة الأولى) وتترك الـ 20% الأخيرة للمحرر البشري لإضافة الخبرة العملية والآراء الشخصية الفريدة.
                     </p>
                 `
@@ -630,8 +684,18 @@ Do not include any conversational text, markdown blocks, or explanations outside
                 const cardHtml = `
                     <article class="group bg-slate-900 border border-slate-800/80 rounded-3xl p-6 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between glow-hover">
                         <div>
+                            <!-- Featured Image with explicit dimensions to prevent CLS -->
+                            <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-5 bg-slate-950">
+                                <img src="${article.featuredImage.url}" 
+                                     alt="${article.featuredImage.alt}" 
+                                     width="${article.featuredImage.width}" 
+                                     height="${article.featuredImage.height}" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                     loading="lazy">
+                            </div>
+
                             <!-- Category and Icon -->
-                            <div class="flex items-center justify-between mb-5">
+                            <div class="flex items-center justify-between mb-4">
                                 <span class="px-3 py-1 rounded-full text-xs font-semibold border ${categoryColor}">
                                     ${article.categoryAr}
                                 </span>
@@ -654,7 +718,7 @@ Do not include any conversational text, markdown blocks, or explanations outside
                         <!-- Footer Info -->
                         <div class="pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-500">
                             <span class="flex items-center gap-1"><i class="fa-regular fa-calendar"></i> ${article.date}</span>
-                            <button onclick="openArticle(${article.id})" class="text-accent-sky font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                            <button onclick="openArticle(${article.id})" class="text-accent-sky font-bold flex items-center gap-1 hover:gap-2 transition-all" aria-label="اقرأ مقال: ${article.title}">
                                 اقرأ الآن <i class="fa-solid fa-arrow-left text-[10px]"></i>
                             </button>
                         </div>
@@ -709,6 +773,13 @@ Do not include any conversational text, markdown blocks, or explanations outside
         function openArticle(id) {
             const article = articles.find(a => a.id === id);
             if (!article) return;
+
+            // Set Modal Featured Image
+            const modalImg = document.getElementById('modal-featured-image');
+            modalImg.src = article.featuredImage.url;
+            modalImg.alt = article.featuredImage.alt;
+            modalImg.width = article.featuredImage.width;
+            modalImg.height = article.featuredImage.height;
 
             document.getElementById('modal-category').textContent = article.categoryAr;
             document.getElementById('modal-title').textContent = article.title;
