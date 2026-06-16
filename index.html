@@ -3,20 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مِنصّة تِكْسِلْ | المدونة التقنية المتقدمة</title>
+    <title>مِنصّة تِكْسِلْ | Tixel Platform - Premium Tech Blog</title>
     
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content="منصة تِكْسِلْ التقنية المتقدمة - مقالات هندسية متعمقة في الذكاء الاصطناعي، الأتمتة، الويب المتقدم والخصوصية الرقمية.">
+    <meta name="keywords" content="ذكاء اصطناعي, ويب, أتمتة, برمجة, تطوير ويب, WebAssembly, Serverless, AI, Tech Blog">
+    <meta name="author" content="Tixel Team">
+    <link rel="canonical" href="https://tixel.tech">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tixel.tech">
+    <meta property="og:title" content="مِنصّة تِكْسِلْ | Premium Tech Blog">
+    <meta property="og:description" content="منصة تِكْسِلْ التقنية المتقدمة - مقالات هندسية متعمقة في الذكاء الاصطناعي، الأتمتة، الويب المتقدم والخصوصية الرقمية.">
+    <meta property="og:image" content="https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tixel.tech">
+    <meta property="twitter:title" content="مِنصّة تِكْسِلْ | Premium Tech Blog">
+    <meta property="twitter:description" content="منصة تِكْسِلْ التقنية المتقدمة - مقالات هندسية متعمقة في الذكاء الاصطناعي، الأتمتة، الويب المتقدم والخصوصية الرقمية.">
+    <meta property="twitter:image" content="https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+    <!-- JSON-LD Schema for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Tixel",
+      "url": "https://tixel.tech",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://tixel.tech/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://images.pexels.com">
 
-    <!-- Preload critical assets to prevent FOUT/CLS -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-
-    <!-- Google Fonts: Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Cairo (Arabic) & Playfair Display / Inter (English) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -28,224 +60,230 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Cairo', 'sans-serif'],
+                        arabic: ['Cairo', 'sans-serif'],
+                        english: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
-                        slate: {
-                            950: '#090d16',
-                            900: '#0f172a',
-                            800: '#1e293b',
-                            700: '#334155',
-                            400: '#94a3b8',
-                            50: '#f8fafc',
+                        pearl: {
+                            obsidian: '#0A0B0E',
+                            slate: '#12151C',
+                            charcoal: '#1A1E26',
+                            cream: '#FCFBF9',
+                            platinum: '#F4F2ED',
+                            gold: '#C5A880',
+                            bronze: '#A38A64',
+                            silver: '#E2E8F0',
+                            muted: '#8E95A5',
                         },
-                        accent: {
-                            sky: '#38bdf8',
-                            emerald: '#10b981',
-                            purple: '#a855f7'
-                        }
                     }
                 }
             }
         }
     </script>
+    
     <style>
-        /* CSS Variables for Theme Switching */
+        /* Pearl Philosophy Theme Configurations */
         :root {
-            /* Default: Night Mode (مريح للعين) */
-            --bg-main: #090d16;
-            --bg-card: #0f172a;
-            --bg-card-hover: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --glass-bg: rgba(15, 23, 42, 0.7);
+            --bg-main: #0A0B0E;
+            --bg-card: #12151C;
+            --bg-card-hover: #1A1E26;
+            --text-main: #FCFBF9;
+            --text-muted: #8E95A5;
+            --border-color: rgba(197, 168, 128, 0.15); /* Muted Gold */
+            --accent-gold: #C5A880;
+            --glass-bg: rgba(10, 11, 14, 0.8);
         }
         
-        body.theme-day {
-            --bg-main: #f8fafc;
-            --bg-card: #ffffff;
-            --bg-card-hover: #f1f5f9;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --border-color: rgba(15, 23, 42, 0.08);
-            --glass-bg: rgba(248, 250, 252, 0.7);
+        body.theme-light {
+            --bg-main: #FCFBF9;
+            --bg-card: #F4F2ED;
+            --bg-card-hover: #EBE9E2;
+            --text-main: #12151C;
+            --text-muted: #5A6270;
+            --border-color: rgba(163, 138, 100, 0.2);
+            --accent-gold: #A38A64;
+            --glass-bg: rgba(252, 251, 249, 0.85);
         }
 
         body.theme-dim {
-            --bg-main: #121214;
-            --bg-card: #1a191e;
-            --bg-card-hover: #25242a;
-            --text-main: #f4f4f5;
-            --text-muted: #a1a1aa;
-            --border-color: rgba(255, 255, 255, 0.06);
-            --glass-bg: rgba(26, 25, 30, 0.7);
+            --bg-main: #15181F;
+            --bg-card: #1E232E;
+            --bg-card-hover: #29303F;
+            --text-main: #E2E8F0;
+            --text-muted: #94A3B8;
+            --border-color: rgba(197, 168, 128, 0.12);
+            --accent-gold: #C5A880;
+            --glass-bg: rgba(21, 24, 31, 0.8);
         }
 
         body {
             background-color: var(--bg-main) !important;
             color: var(--text-main) !important;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Apply variables to Tailwind classes */
-        .bg-slate-950, .bg-slate-950\/90 {
-            background-color: var(--bg-main) !important;
-        }
-        .bg-slate-900, .bg-slate-900\/30, .bg-slate-900\/80, .bg-slate-900\/90 {
-            background-color: var(--bg-card) !important;
-        }
-        .text-slate-50, .text-slate-100, .text-slate-200, .text-slate-300 {
-            color: var(--text-main) !important;
-        }
-        .text-slate-400, .text-slate-500 {
-            color: var(--text-muted) !important;
-        }
-        .border-slate-800, .border-slate-800\/60, .border-slate-800\/80, .border-slate-900, .border-slate-700\/50 {
+        /* Micro-Tailored Layout Elements */
+        .pearl-border {
             border-color: var(--border-color) !important;
         }
-        .glass-effect {
-            background: var(--glass-bg) !important;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color) !important;
+        
+        .pearl-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        /* Custom overrides for Day Mode */
-        body.theme-day .logo-text {
-            background: linear-gradient(to left, #0f172a, #334155);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        body.theme-day input {
-            background-color: #ffffff !important;
-            color: #0f172a !important;
-            border: 1px solid #cbd5e1 !important;
-        }
-        body.theme-day .category-btn:not(.active) {
-            background-color: #f1f5f9 !important;
-            color: #475569 !important;
-            border-color: #e2e8f0 !important;
-        }
-        body.theme-day .prose {
-            color: #334155 !important;
-        }
-        body.theme-day .prose h2, body.theme-day .prose h1 {
-            color: #0f172a !important;
+        .pearl-card:hover {
+            background-color: var(--bg-card-hover);
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
         }
 
-        /* Custom overrides for Dim Mode */
-        body.theme-dim .logo-text {
-            background: linear-gradient(to left, #f4f4f5, #a1a1aa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        body.theme-dim input {
-            background-color: #1a191e !important;
-            color: #f4f4f5 !important;
-            border: 1px solid #3f3f46 !important;
-        }
-        body.theme-dim .category-btn:not(.active) {
-            background-color: #25242a !important;
-            color: #a1a1aa !important;
-            border-color: #3f3f46 !important;
+        .glass-effect {
+            background: var(--glass-bg) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color) !important;
         }
 
         /* Custom scrollbar for premium look */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
             background: var(--bg-main);
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--bg-card-hover);
-            border-radius: 4px;
+            background: var(--border-color);
+            border-radius: 3px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #38bdf8;
+            background: var(--accent-gold);
         }
-        .glow-hover:hover {
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+
+        /* Gold gradient text */
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #FFF 30%, #C5A880 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body.theme-light .gold-text-gradient {
+            background: linear-gradient(135deg, #12151C 30%, #A38A64 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Fine tailoring lines */
+        .tailor-line {
+            position: relative;
+        }
+        .tailor-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+        }
+
+        /* Language-specific typography scaling */
+        html[lang="ar"] .font-dynamic-sans {
+            font-family: 'Cairo', sans-serif;
+        }
+        html[lang="en"] .font-dynamic-sans {
+            font-family: 'Inter', sans-serif;
+        }
+        html[lang="en"] .font-dynamic-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        html[lang="ar"] .font-dynamic-serif {
+            font-family: 'Cairo', sans-serif; /* Fallback for Arabic */
+            font-weight: 800;
         }
     </style>
 </head>
-<body class="theme-night font-sans min-h-screen selection:bg-accent-sky selection:text-slate-950">
+<body class="theme-dark font-dynamic-sans min-h-screen selection:bg-pearl-gold selection:text-pearl-obsidian">
 
     <!-- Header / Nav -->
-    <header class="sticky top-0 z-40 w-full glass-effect border-b border-slate-800 transition-all duration-300">
+    <header class="sticky top-0 z-40 w-full glass-effect transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="#" class="flex items-center space-x-3 space-x-reverse group" aria-label="تِكْسِلْ - الصفحة الرئيسية">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accent-sky to-accent-emerald flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-accent-sky/20 group-hover:scale-105 transition-transform">
-                    تـ
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 space-x-reverse group" aria-label="Tixel Home">
+                <div class="w-10 h-10 rounded-none border border-pearl-gold flex items-center justify-center text-pearl-gold font-serif font-bold text-xl transition-all duration-300 group-hover:bg-pearl-gold group-hover:text-pearl-obsidian">
+                    T
                 </div>
-                <span class="logo-text text-2xl font-extrabold tracking-tight bg-gradient-to-l from-slate-50 to-slate-400 bg-clip-text text-transparent">
-                    تِكْـسِـلْ <span class="text-accent-sky">.</span>
+                <span class="text-xl font-bold tracking-widest uppercase text-slate-50 gold-text-gradient font-dynamic-serif" id="brand-logo">
+                    تِكْـسِـلْ <span class="text-pearl-gold">.</span>
                 </span>
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-sm font-semibold text-slate-400">
-                <a href="#" class="hover:text-accent-sky transition-colors duration-200">الرئيسية</a>
-                <a href="#articles-section" class="hover:text-accent-sky transition-colors duration-200">المقالات التقنية</a>
-                <a href="#newsletter-section" class="hover:text-accent-sky transition-colors duration-200">النشرة البريدية</a>
-                <a href="#about-section" class="hover:text-accent-sky transition-colors duration-200">من نحن</a>
+            <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-xs tracking-widest uppercase font-medium" id="nav-links">
+                <a href="#" class="text-pearl-gold hover:opacity-80 transition-opacity" data-key="nav-home">الرئيسية</a>
+                <a href="#articles-section" class="text-pearl-muted hover:text-pearl-gold transition-colors" data-key="nav-articles">المقالات الهندسية</a>
+                <a href="#newsletter-section" class="text-pearl-muted hover:text-pearl-gold transition-colors" data-key="nav-newsletter">النشرة البريدية</a>
+                <a href="#about-section" class="text-pearl-muted hover:text-pearl-gold transition-colors" data-key="nav-about">الفلسفة التحريرية</a>
             </nav>
 
-            <!-- Search & Actions -->
+            <!-- Search, Lang & Theme Toggles -->
             <div class="flex items-center space-x-4 space-x-reverse">
-                <!-- Theme Switcher -->
-                <div class="flex items-center bg-slate-900/80 border border-slate-700/50 rounded-full p-1 gap-1" id="theme-switcher-container">
-                    <button onclick="setTheme('day')" id="btn-theme-day" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-accent-sky transition-colors" title="الوضع النهارى">
-                        <i class="fa-solid fa-sun text-sm"></i>
+                
+                <!-- Bilingual Toggle Button -->
+                <button onclick="toggleLanguage()" class="border border-pearl-gold/30 px-3 py-1.5 text-[11px] tracking-wider uppercase font-semibold text-pearl-gold hover:bg-pearl-gold hover:text-pearl-obsidian transition-all duration-300 rounded-none" id="lang-toggle-btn">
+                    EN
+                </button>
+
+                <!-- Premium Theme Switcher -->
+                <div class="flex items-center border border-pearl-gold/20 rounded-none p-0.5 gap-0.5 bg-pearl-slate/40" id="theme-switcher-container">
+                    <button onclick="setTheme('light')" id="btn-theme-light" class="w-7 h-7 flex items-center justify-center text-pearl-muted hover:text-pearl-gold transition-colors" title="Light Pearl">
+                        <i class="fa-solid fa-sun text-xs"></i>
                     </button>
-                    <button onclick="setTheme('night')" id="btn-theme-night" class="w-8 h-8 rounded-full flex items-center justify-center text-accent-sky bg-slate-800 transition-colors" title="الوضع الليلي">
-                        <i class="fa-solid fa-moon text-sm"></i>
+                    <button onclick="setTheme('dark')" id="btn-theme-dark" class="w-7 h-7 flex items-center justify-center text-pearl-gold transition-colors" title="Obsidian Pearl">
+                        <i class="fa-solid fa-moon text-xs"></i>
                     </button>
-                    <button onclick="setTheme('dim')" id="btn-theme-dim" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-accent-sky transition-colors" title="وضع مريح للعين">
-                        <i class="fa-solid fa-eye text-sm"></i>
+                    <button onclick="setTheme('dim')" id="btn-theme-dim" class="w-7 h-7 flex items-center justify-center text-pearl-muted hover:text-pearl-gold transition-colors" title="Dim Pearl">
+                        <i class="fa-solid fa-eye text-xs"></i>
                     </button>
                 </div>
 
-                <div class="relative hidden sm:block">
-                    <input type="text" id="search-input" onkeyup="searchArticles()" placeholder="ابحث عن مقال..." aria-label="ابحث عن مقال تقني" class="bg-slate-900/80 border border-slate-700/50 rounded-full py-2 pr-10 pl-4 text-xs focus:outline-none focus:border-accent-sky focus:ring-1 focus:ring-accent-sky transition-all w-48 md:w-64 text-slate-200">
-                    <span class="absolute right-3.5 top-2.5 text-slate-400 text-xs"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <!-- Desktop Search bar -->
+                <div class="relative hidden lg:block">
+                    <input type="text" id="search-input" onkeyup="searchArticles()" placeholder="ابحث عن مقال..." aria-label="Search" class="bg-pearl-slate/50 border border-pearl-gold/20 rounded-none py-2 pr-10 pl-4 text-xs focus:outline-none focus:border-pearl-gold transition-all w-48 text-pearl-cream">
+                    <span class="absolute right-3 top-2.5 text-pearl-muted text-xs"><i class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
-                <a href="#newsletter-section" class="bg-gradient-to-r from-accent-sky to-accent-emerald text-slate-950 font-bold px-5 py-2.5 rounded-xl text-xs hover:opacity-90 transition-opacity shadow-md shadow-accent-sky/10">
-                    اشترك الآن
-                </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Wrapper -->
+    <!-- Main Dynamic Container -->
     <main id="main-content">
         
         <!-- Hero Section -->
-        <section class="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28 border-b border-slate-900">
-            <!-- Background Glows -->
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-sky/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-emerald/5 rounded-full blur-3xl pointer-events-none"></div>
+        <section class="relative overflow-hidden pt-20 pb-24 lg:pt-32 lg:pb-36 border-b border-pearl-gold/10 tailor-line">
+            <!-- Fine Subtle Grid Overlay -->
+            <div class="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-accent-sky mb-6">
-                        <span class="w-2 h-2 rounded-full bg-accent-sky animate-pulse"></span>
+                <div class="text-center max-w-4xl mx-auto">
+                    <span class="inline-flex items-center gap-2 px-4 py-1 border border-pearl-gold/30 text-[11px] tracking-widest uppercase font-semibold text-pearl-gold mb-8" id="hero-badge">
+                        <span class="w-1.5 h-1.5 bg-pearl-gold animate-pulse"></span>
                         منصة الفكر التقني المتقدم والأتمتة الذكية
                     </span>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight sm:leading-none text-slate-50 mb-8">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight sm:leading-none text-pearl-cream mb-10 font-dynamic-serif" id="hero-title">
                         أفكار هندسية تصنع <br class="hidden sm:inline">
-                        <span class="bg-gradient-to-l from-accent-sky via-accent-emerald to-accent-purple bg-clip-text text-transparent">المستقبل الرقمي</span>
+                        <span class="gold-text-gradient">المستقبل الرقمي</span>
                     </h1>
-                    <p class="text-base sm:text-lg text-slate-400 leading-relaxed mb-10">
+                    <p class="text-sm sm:text-base text-pearl-muted leading-relaxed max-w-2xl mx-auto mb-12" id="hero-desc">
                         مساحة مخصصة للمطورين، رواد الأعمال الرقميين، وصناع القرار التقني. نقدم تحليلات عميقة، أدلة برمجية، واستراتيجيات عملية خالية من الحشو.
                     </p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="#articles-section" class="px-8 py-4 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-100 font-semibold rounded-2xl transition-all duration-200 glow-hover">
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <a href="#articles-section" class="px-8 py-4 border border-pearl-gold text-pearl-gold text-xs tracking-widest uppercase font-semibold hover:bg-pearl-gold hover:text-pearl-obsidian transition-all duration-300" id="hero-btn-primary">
                             استكشف المقالات العميقـة
                         </a>
-                        <a href="#newsletter-section" class="px-8 py-4 bg-gradient-to-r from-accent-sky to-accent-emerald hover:opacity-95 text-slate-950 font-bold rounded-2xl transition-all duration-200">
+                        <a href="#newsletter-section" class="px-8 py-4 bg-pearl-gold text-pearl-obsidian text-xs tracking-widest uppercase font-semibold hover:bg-transparent hover:text-pearl-gold border border-pearl-gold transition-all duration-300" id="hero-btn-secondary">
                             انضم للنشرة البريدية
                         </a>
                     </div>
@@ -253,96 +291,89 @@
             </div>
         </section>
 
-        <!-- Blog & Articles Section -->
-        <section id="articles-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Articles Showcase Section -->
+        <section id="articles-section" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Filter & Header Bar -->
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12 pb-6 border-b border-slate-800/60">
+            <!-- Section Header & Filter Layout -->
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 pb-8 border-b border-pearl-gold/10">
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-100">أحدث الأطروحات التقنية</h2>
-                    <p class="text-sm text-slate-400 mt-2">مقالات مكثفة مدعومة بالكود والتحليل الهيكلي</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-pearl-cream font-dynamic-serif" id="section-title">أحدث الأطروحات التقنية</h2>
+                    <p class="text-xs text-pearl-muted tracking-wide uppercase mt-3" id="section-subtitle">مقالات مكثفة مدعومة بالكود والتحليل الهيكلي</p>
                 </div>
                 
                 <!-- Category Filters -->
                 <div class="flex flex-wrap gap-2" id="category-filters">
-                    <button onclick="filterCategory('all')" class="category-btn active px-4 py-2 text-xs font-semibold rounded-xl bg-accent-sky text-slate-950 transition-all duration-200" aria-label="عرض كل التصنيفات">الكل</button>
-                    <button onclick="filterCategory('automation')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200" aria-label="تصنيف الأتمتة">الأتمتة</button>
-                    <button onclick="filterCategory('assets')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200" aria-label="تصنيف الأصول الرقمية">الأصول الرقمية</button>
-                    <button onclick="filterCategory('webassembly')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200" aria-label="تصنيف الويب المتقدم">الويب المتقدم</button>
-                    <button onclick="filterCategory('privacy')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200" aria-label="تصنيف الخصوصية">الخصوصية</button>
-                    <button onclick="filterCategory('ai')" class="category-btn px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition-all duration-200" aria-label="تصنيف الذكاء الاصطناعي">الذكاء الاصطناعي</button>
+                    <!-- Dynamic buttons injected via script -->
                 </div>
             </div>
 
-            <!-- Search input for mobile inside section -->
-            <div class="mb-8 sm:hidden">
+            <!-- Mobile Search Bar inside Section -->
+            <div class="mb-10 lg:hidden">
                 <div class="relative">
-                    <input type="text" id="search-input-mobile" onkeyup="searchArticlesMobile()" placeholder="ابحث عن مقال..." aria-label="ابحث عن مقال تقني للهاتف" class="w-full bg-slate-900/80 border border-slate-700/50 rounded-xl py-3 pr-10 pl-4 text-xs focus:outline-none focus:border-accent-sky text-slate-200">
-                    <span class="absolute right-3.5 top-3.5 text-slate-400 text-xs"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" id="search-input-mobile" onkeyup="searchArticlesMobile()" placeholder="ابحث عن مقال..." aria-label="Search" class="w-full bg-pearl-slate/50 border border-pearl-gold/20 rounded-none py-3 pr-10 pl-4 text-xs focus:outline-none focus:border-pearl-gold text-pearl-cream">
+                    <span class="absolute right-3.5 top-3.5 text-pearl-muted text-xs"><i class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
             </div>
 
-            <!-- Articles Grid -->
+            <!-- 10 Articles Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
-                <!-- Article cards will be injected here dynamically via JS -->
+                <!-- Dynamically populated via JS -->
             </div>
             
             <!-- Empty State -->
-            <div id="empty-state" class="hidden text-center py-20">
-                <i class="fa-solid fa-folder-open text-5xl text-slate-700 mb-4"></i>
-                <h3 class="text-lg font-bold text-slate-300">لم يتم العثور على مقالات</h3>
-                <p class="text-sm text-slate-500 mt-1">جرب البحث بكلمات مفتاحية أخرى أو تغيير التصنيف.</p>
+            <div id="empty-state" class="hidden text-center py-24 border border-dashed border-pearl-gold/20">
+                <i class="fa-solid fa-folder-open text-4xl text-pearl-muted mb-4"></i>
+                <h3 class="text-lg font-bold text-pearl-cream font-dynamic-serif" id="empty-title">لم يتم العثور على مقالات</h3>
+                <p class="text-xs text-pearl-muted mt-2" id="empty-desc">جرب البحث بكلمات مفتاحية أخرى أو تغيير التصنيف.</p>
             </div>
         </section>
 
         <!-- Interactive Reader Modal (Dynamic Article Detail) -->
         <div id="reader-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
             <!-- Backdrop -->
-            <div class="fixed inset-0 bg-slate-950/90 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
+            <div class="fixed inset-0 bg-pearl-obsidian/95 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
 
             <!-- Modal Content Container -->
-            <div class="flex min-h-screen items-center justify-center p-4 sm:p-6 lg:p-8">
-                <div class="relative transform overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 text-right shadow-2xl transition-all w-full max-w-4xl my-8">
+            <div class="flex min-h-screen items-center justify-center p-4 sm:p-6 lg:p-12">
+                <div class="relative transform overflow-hidden rounded-none bg-pearl-slate border border-pearl-gold text-right shadow-2xl transition-all w-full max-w-4xl my-8">
                     
                     <!-- Close Button & Sticky Top Bar -->
-                    <div class="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-md border-b border-slate-800/60">
-                        <span id="modal-category" class="px-3 py-1 rounded-full text-xs font-semibold bg-accent-sky/10 text-accent-sky"></span>
-                        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-50 p-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors" aria-label="إغلاق نافذة القراءة">
+                    <div class="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-pearl-slate/90 backdrop-blur-md border-b border-pearl-gold/10">
+                        <span id="modal-category" class="px-3 py-1 border border-pearl-gold/30 text-[10px] tracking-widest uppercase font-semibold text-pearl-gold"></span>
+                        <button onclick="closeModal()" class="text-pearl-muted hover:text-pearl-gold p-2 transition-colors" aria-label="Close Modal">
                             <i class="fa-solid fa-xmark text-lg"></i>
                         </button>
                     </div>
 
                     <!-- Article Body Container -->
-                    <div class="px-6 py-8 sm:px-10 sm:py-10 max-h-[80vh] overflow-y-auto" id="modal-body-container">
-                        <!-- Featured Image inside Modal -->
-                        <div class="relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden mb-8 shadow-lg">
-                            <img id="modal-featured-image" src="" alt="" width="800" height="450" class="w-full h-full object-cover">
+                    <div class="px-6 py-8 sm:px-12 sm:py-12 max-h-[75vh] overflow-y-auto" id="modal-body-container">
+                        <!-- Featured Image inside Modal (Strictly abstract/no humans) -->
+                        <div class="relative w-full h-64 sm:h-96 overflow-hidden mb-10 border border-pearl-gold/10">
+                            <img id="modal-featured-image" src="" alt="" class="w-full h-full object-cover">
                         </div>
 
                         <!-- Title -->
-                        <h1 id="modal-title" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-50 leading-tight mb-4"></h1>
+                        <h1 id="modal-title" class="text-2xl sm:text-4xl font-extrabold text-pearl-cream leading-tight mb-6 font-dynamic-serif"></h1>
                         
                         <!-- Metadata -->
-                        <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 mb-8 pb-6 border-b border-slate-800/60">
+                        <div class="flex flex-wrap items-center gap-6 text-xs text-pearl-muted mb-10 pb-6 border-b border-pearl-gold/10">
                             <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar-days"></i> <span id="modal-date"></span></span>
                             <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock"></i> <span id="modal-readtime"></span></span>
-                            <span class="flex items-center gap-1.5"><i class="fa-regular fa-user"></i> الكاتب: فريق تِكْسِلْ</span>
+                            <span class="flex items-center gap-1.5"><i class="fa-regular fa-user"></i> <span id="modal-author"></span></span>
                         </div>
 
                         <!-- Dynamic HTML Content -->
-                        <div id="modal-article-content" class="prose prose-invert prose-sky max-w-none text-slate-300 leading-relaxed space-y-6 text-sm sm:text-base">
+                        <div id="modal-article-content" class="prose prose-invert prose-stone max-w-none text-pearl-cream/90 leading-relaxed space-y-6 text-sm sm:text-base">
                             <!-- Content injected dynamically -->
                         </div>
                     </div>
 
                     <!-- Footer Action -->
-                    <div class="px-6 py-4 bg-slate-900/90 border-t border-slate-800/60 flex items-center justify-between">
-                        <div class="flex gap-3">
-                            <button onclick="shareArticle()" class="text-xs font-semibold text-slate-400 hover:text-accent-sky flex items-center gap-1.5 bg-slate-800/50 px-3 py-2 rounded-lg transition-colors" aria-label="مشاركة هذا المقال">
-                                <i class="fa-solid fa-share-nodes"></i> مشاركة المقال
-                            </button>
-                        </div>
-                        <button onclick="closeModal()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl transition-colors">
+                    <div class="px-6 py-4 bg-pearl-charcoal border-t border-pearl-gold/10 flex items-center justify-between">
+                        <button onclick="shareArticle()" class="text-xs font-semibold text-pearl-gold hover:opacity-80 flex items-center gap-2 border border-pearl-gold/20 px-4 py-2 transition-all" id="modal-share-btn">
+                            <i class="fa-solid fa-share-nodes"></i> مشاركة المقال
+                        </button>
+                        <button onclick="closeModal()" class="px-6 py-2 bg-pearl-gold text-pearl-obsidian text-xs font-bold hover:bg-transparent hover:text-pearl-gold border border-pearl-gold transition-all" id="modal-close-btn">
                             إغلاق القارئ
                         </button>
                     </div>
@@ -350,77 +381,77 @@
             </div>
         </div>
 
-        <!-- Newsletter Section -->
-        <section id="newsletter-section" class="py-20 bg-slate-900/30 border-t border-b border-slate-900 relative">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <div class="w-16 h-16 rounded-2xl bg-accent-sky/10 border border-accent-sky/20 flex items-center justify-center text-accent-sky text-2xl mx-auto mb-6">
+        <!-- Premium Newsletter Section -->
+        <section id="newsletter-section" class="py-24 bg-pearl-slate border-t border-b border-pearl-gold/10 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="w-12 h-12 border border-pearl-gold flex items-center justify-center text-pearl-gold text-xl mx-auto mb-8">
                     <i class="fa-regular fa-envelope-open"></i>
                 </div>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-100 mb-4">انضم إلى مجتمع النخبة التقنية</h2>
-                <p class="text-sm sm:text-base text-slate-400 mb-8 max-w-lg mx-auto leading-relaxed">
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-pearl-cream mb-6 font-dynamic-serif" id="news-title">انضم إلى مجتمع النخبة التقنية</h2>
+                <p class="text-xs sm:text-sm text-pearl-muted mb-10 max-w-xl mx-auto leading-relaxed" id="news-desc">
                     نرسل مقالاً واحداً فائق الجودة أسبوعياً. لا رسائل مزعجة، لا حشو، فقط معرفة هندسية خالصة قابلة للتطبيق مباشرة في بريدك الإلكتروني.
                 </p>
                 <form id="newsletter-form" onsubmit="handleSubscribe(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                    <input type="email" required placeholder="عنوان بريدك الإلكتروني التقني..." aria-label="البريد الإلكتروني للاشتراك" class="flex-grow bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent-sky text-slate-200">
-                    <button type="submit" class="bg-gradient-to-r from-accent-sky to-accent-emerald text-slate-950 font-bold px-6 py-3 rounded-xl text-sm hover:opacity-90 transition-opacity" aria-label="تأكيد الاشتراك في النشرة البريدية">
+                    <input type="email" required placeholder="عنوان بريدك الإلكتروني التقني..." aria-label="Email Address" class="flex-grow bg-pearl-obsidian border border-pearl-gold/20 rounded-none px-4 py-3.5 text-xs focus:outline-none focus:border-pearl-gold text-pearl-cream">
+                    <button type="submit" class="bg-pearl-gold text-pearl-obsidian font-bold px-8 py-3.5 text-xs tracking-widest uppercase hover:bg-transparent hover:text-pearl-gold border border-pearl-gold transition-all duration-300" id="news-btn">
                         اشترك الآن
                     </button>
                 </form>
-                <p id="subscribe-success" class="text-accent-emerald text-xs mt-3 hidden"><i class="fa-solid fa-circle-check"></i> شكرًا لاشتراكك! لقد تم تسجيل بريدك بنجاح.</p>
+                <p id="subscribe-success" class="text-pearl-gold text-xs mt-4 hidden"><i class="fa-solid fa-circle-check"></i> <span id="news-success-text">شكرًا لاشتراكك! لقد تم تسجيل بريدك بنجاح.</span></p>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Editorial Philosophy / About Section -->
+        <section id="about-section" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span class="text-xs font-bold text-accent-emerald uppercase tracking-widest">فلسفتنا التحريرية</span>
-                    <h2 class="text-3xl font-bold text-slate-100 mt-2 mb-6">لماذا تِكْسِلْ؟</h2>
-                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                    <span class="text-[11px] tracking-widest uppercase font-bold text-pearl-gold" id="about-badge">فلسفتنا التحريرية</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-pearl-cream mt-3 mb-8 font-dynamic-serif" id="about-title">لماذا تِكْسِلْ؟</h2>
+                    <p class="text-pearl-muted text-xs sm:text-sm leading-relaxed mb-6" id="about-p1">
                         في عالم مزدحم بالمحتوى السطحي والمعاد تدويره، نؤمن بأن المهندس والمطور العربي يستحق مصدراً رصيناً يتعمق في البنى التحتية، الأتمتة المتقدمة، وهندسة النظم.
                     </p>
-                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                    <p class="text-pearl-muted text-xs sm:text-sm leading-relaxed mb-8" id="about-p2">
                         كل مقال ننشره يمر بمراحل من التدقيق الهندسي، والتحقق من الأكواد البرمجية، لنضمن لك تجربة قراءة غنية تضيف قيمة حقيقية لحياتك المهنية والتقنية.
                     </p>
-                    <div class="grid grid-cols-3 gap-4 text-center">
-                        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800/60">
-                            <div class="text-2xl font-bold text-accent-sky">100%</div>
-                            <div class="text-[10px] text-slate-500 mt-1">محتوى حصري وعميق</div>
+                    <div class="grid grid-cols-3 gap-6 text-center">
+                        <div class="p-5 border border-pearl-gold/10 bg-pearl-slate/30">
+                            <div class="text-xl sm:text-2xl font-bold text-pearl-gold font-dynamic-serif">100%</div>
+                            <div class="text-[10px] tracking-wider uppercase text-pearl-muted mt-2" id="stat-1">محتوى حصري وعميق</div>
                         </div>
-                        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800/60">
-                            <div class="text-2xl font-bold text-accent-emerald">Zero</div>
-                            <div class="text-[10px] text-slate-500 mt-1">حشو ولوريم إيبسوم</div>
+                        <div class="p-5 border border-pearl-gold/10 bg-pearl-slate/30">
+                            <div class="text-xl sm:text-2xl font-bold text-pearl-gold font-dynamic-serif">Zero</div>
+                            <div class="text-[10px] tracking-wider uppercase text-pearl-muted mt-2" id="stat-2">حشو ولوريم إيبسوم</div>
                         </div>
-                        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800/60">
-                            <div class="text-2xl font-bold text-accent-purple">Ready</div>
-                            <div class="text-[10px] text-slate-500 mt-1">أكواد جاهزة للإنتاج</div>
+                        <div class="p-5 border border-pearl-gold/10 bg-pearl-slate/30">
+                            <div class="text-xl sm:text-2xl font-bold text-pearl-gold font-dynamic-serif">Ready</div>
+                            <div class="text-[10px] tracking-wider uppercase text-pearl-muted mt-2" id="stat-3">أكواد جاهزة للإنتاج</div>
                         </div>
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-accent-sky/10 to-transparent rounded-3xl blur-2xl"></div>
-                    <div class="relative bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl">
-                        <h3 class="text-xl font-bold text-slate-100 mb-4">مجالات التغطية الأساسية</h3>
-                        <ul class="space-y-4 text-sm text-slate-300">
-                            <li class="flex items-start gap-3">
-                                <span class="text-accent-sky text-lg mt-0.5"><i class="fa-solid fa-circle-nodes"></i></span>
+                    <div class="absolute inset-0 bg-gradient-to-tr from-pearl-gold/5 to-transparent rounded-none blur-2xl"></div>
+                    <div class="relative bg-pearl-slate border border-pearl-gold/20 p-8 sm:p-12">
+                        <h3 class="text-lg sm:text-xl font-bold text-pearl-cream mb-6 font-dynamic-serif" id="pillars-title">مجالات التغطية الأساسية</h3>
+                        <ul class="space-y-6 text-xs sm:text-sm text-pearl-muted">
+                            <li class="flex items-start gap-4">
+                                <span class="text-pearl-gold text-lg mt-0.5"><i class="fa-solid fa-circle-nodes"></i></span>
                                 <div>
-                                    <strong class="text-slate-100 block">هندسة الأتمتة والـ Serverless</strong>
-                                    بناء أنظمة ذكية ذاتية العمل بتكلفة تشغيل صفرية لتعظيم العوائد السلبية.
+                                    <strong class="text-pearl-cream block mb-1 font-dynamic-serif" id="pillar-1-title">هندسة الأتمتة والـ Serverless</strong>
+                                    <span id="pillar-1-desc">بناء أنظمة ذكية ذاتية العمل بتكلفة تشغيل صفرية لتعظيم العوائد السلبية.</span>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-accent-emerald text-lg mt-0.5"><i class="fa-solid fa-chart-line"></i></span>
+                            <li class="flex items-start gap-4">
+                                <span class="text-pearl-gold text-lg mt-0.5"><i class="fa-solid fa-chart-line"></i></span>
                                 <div>
-                                    <strong class="text-slate-100 block">الاستثمار في الأصول الرقمية</strong>
-                                    استراتيجيات تقييم واستغلال النطاقات والبرمجيات كأصول عالية القيمة.
+                                    <strong class="text-pearl-cream block mb-1 font-dynamic-serif" id="pillar-2-title">الاستثمار في الأصول الرقمية</strong>
+                                    <span id="pillar-2-desc">استراتيجيات تقييم واستغلال النطاقات والبرمجيات كأصول عالية القيمة.</span>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-accent-purple text-lg mt-0.5"><i class="fa-solid fa-terminal"></i></span>
+                            <li class="flex items-start gap-4">
+                                <span class="text-pearl-gold text-lg mt-0.5"><i class="fa-solid fa-terminal"></i></span>
                                 <div>
-                                    <strong class="text-slate-100 block">تقنيات الويب الحديثة والـ Wasm</strong>
-                                    تشغيل اللغات المعقدة كبايثون ورست مباشرة في المتصفح بكفاءة عالية.
+                                    <strong class="text-pearl-cream block mb-1 font-dynamic-serif" id="pillar-3-title">تقنيات الويب الحديثة والـ Wasm</strong>
+                                    <span id="pillar-3-desc">تشغيل اللغات المعقدة كبايثون ورست مباشرة في المتصفح بكفاءة عالية.</span>
                                 </div>
                             </li>
                         </ul>
@@ -432,124 +463,216 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-12">
+    <footer class="bg-pearl-obsidian border-t border-pearl-gold/10 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-900">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-pearl-gold/10">
                 <div class="flex items-center space-x-3 space-x-reverse">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-accent-sky to-accent-emerald flex items-center justify-center text-slate-950 font-bold text-base">تـ</div>
-                    <span class="text-lg font-bold text-slate-100">تِكْـسِـلْ</span>
+                    <div class="w-8 h-8 border border-pearl-gold flex items-center justify-center text-pearl-gold font-serif font-bold text-sm">T</div>
+                    <span class="text-base font-bold text-pearl-cream tracking-wider uppercase font-dynamic-serif">تِكْـسِـلْ</span>
                 </div>
-                <div class="flex gap-6 text-sm text-slate-400">
-                    <a href="#" class="hover:text-accent-sky transition-colors">الرئيسية</a>
-                    <a href="#articles-section" class="hover:text-accent-sky transition-colors">المقالات</a>
-                    <a href="#newsletter-section" class="hover:text-accent-sky transition-colors">النشرة البريدية</a>
-                    <a href="#about-section" class="hover:text-accent-sky transition-colors">فلسفتنا</a>
+                <div class="flex flex-wrap justify-center gap-8 text-[11px] tracking-widest uppercase font-semibold text-pearl-muted" id="footer-links">
+                    <a href="#" class="hover:text-pearl-gold transition-colors">الرئيسية</a>
+                    <a href="#articles-section" class="hover:text-pearl-gold transition-colors">المقالات</a>
+                    <a href="#newsletter-section" class="hover:text-pearl-gold transition-colors">النشرة البريدية</a>
+                    <a href="#about-section" class="hover:text-pearl-gold transition-colors">فلسفتنا</a>
                 </div>
-                <div class="flex gap-4 text-slate-400 text-lg">
-                    <a href="#" class="hover:text-accent-sky transition-colors" aria-label="تابعنا على منصة إكس"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="hover:text-accent-sky transition-colors" aria-label="تابعنا على جيت هاب"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="hover:text-accent-sky transition-colors" aria-label="تابعنا على لينكد إن"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="flex gap-6 text-pearl-muted text-base">
+                    <a href="#" class="hover:text-pearl-gold transition-colors" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-pearl-gold transition-colors" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="hover:text-pearl-gold transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
-            <p class="text-center text-xs text-slate-400 mt-8">
-                &copy; 2026 منصة تِكْسِلْ. جميع الحقوق محفوظة. صُمم بكل شغف للمجتمع التقني العربي الراقي.
+            <p class="text-center text-[11px] tracking-wider text-pearl-muted mt-10" id="footer-copy">
+                &copy; 2026 منصة تِكْسِلْ. جميع الحقوق محفوظة. صُمم بكل شغف للمجتمع التقني العربي الرفيع.
             </p>
         </div>
     </footer>
 
     <!-- JavaScript Data and Interactive Logic -->
     <script>
+        // Localized UI Dictionary
+        const translations = {
+            ar: {
+                brandLogo: 'تِكْـسِـلْ <span class="text-pearl-gold">.</span>',
+                navHome: 'الرئيسية',
+                navArticles: 'المقالات الهندسية',
+                navNewsletter: 'النشرة البريدية',
+                navAbout: 'الفلسفة التحريرية',
+                heroBadge: '<span class="w-1.5 h-1.5 bg-pearl-gold animate-pulse"></span> منصة الفكر التقني المتقدم والأتمتة الذكية',
+                heroTitle: 'أفكار هندسية تصنع <br class="hidden sm:inline"><span class="gold-text-gradient">المستقبل الرقمي</span>',
+                heroDesc: 'مساحة مخصصة للمطورين، رواد الأعمال الرقميين، وصناع القرار التقني. نقدم تحليلات عميقة، أدلة برمجية، واستراتيجيات عملية خالية من الحشو.',
+                heroBtnPrimary: 'استكشف المقالات العميقـة',
+                heroBtnSecondary: 'انضم للنشرة البريدية',
+                sectionTitle: 'أحدث الأطروحات التقنية',
+                sectionSubtitle: 'مقالات مكثفة مدعومة بالكود والتحليل الهيكلي',
+                emptyTitle: 'لم يتم العثور على مقالات',
+                emptyDesc: 'جرب البحث بكلمات مفتاحية أخرى أو تغيير التصنيف.',
+                modalShareBtn: '<i class="fa-solid fa-share-nodes"></i> مشاركة المقال',
+                modalCloseBtn: 'إغلاق القارئ',
+                newsTitle: 'انضم إلى مجتمع النخبة التقنية',
+                newsDesc: 'نرسل مقالاً واحداً فائق الجودة أسبوعياً. لا رسائل مزعجة، لا حشو، فقط معرفة هندسية خالصة قابلة للتطبيق مباشرة في بريدك الإلكتروني.',
+                newsBtn: 'اشترك الآن',
+                newsSuccessText: 'شكرًا لاشتراكك! لقد تم تسجيل بريدك بنجاح.',
+                aboutBadge: 'فلسفتنا التحريرية',
+                aboutTitle: 'لماذا تِكْسِلْ؟',
+                aboutP1: 'في عالم مزدحم بالمحتوى السطحي والمعاد تدويره، نؤمن بأن المهندس والمطور العربي يستحق مصدراً رصيناً يتعمق في البنى التحتية، الأتمتة المتقدمة، وهندسة النظم.',
+                aboutP2: 'كل مقال ننشره يمر بمراحل من التدقيق الهندسي، والتحقق من الأكواد البرمجية، لنضمن لك تجربة قراءة غنية تضيف قيمة حقيقية لحياتك المهنية والتقنية.',
+                stat1: 'محتوى حصري وعميق',
+                stat2: 'حشو ولوريم إيبسوم',
+                stat3: 'أكواد جاهزة للإنتاج',
+                pillarsTitle: 'مجالات التغطية الأساسية',
+                pillar1Title: 'هندسة الأتمتة والـ Serverless',
+                pillar1Desc: 'بناء أنظمة ذكية ذاتية العمل بتكلفة تشغيل صفرية لتعظيم العوائد السلبية.',
+                pillar2Title: 'الاستثمار في الأصول الرقمية',
+                pillar2Desc: 'استراتيجيات تقييم واستغلال النطاقات والبرمجيات كأصول عالية القيمة.',
+                pillar3Title: 'تقنيات الويب الحديثة والـ Wasm',
+                pillar3Desc: 'تشغيل اللغات المعقدة كبايثون ورست مباشرة في المتصفح بكفاءة عالية.',
+                footerCopy: '&copy; 2026 منصة تِكْسِلْ. جميع الحقوق محفوظة. صُمم بكل شغف للمجتمع التقني العربي الرفيع.',
+                searchPlaceholder: 'ابحث عن مقال...',
+                readNow: 'اقرأ الآن',
+                authorName: 'فريق تِكْسِلْ'
+            },
+            en: {
+                brandLogo: 'TIXEL <span class="text-pearl-gold">.</span>',
+                navHome: 'Home',
+                navArticles: 'Engineering Articles',
+                navNewsletter: 'Newsletter',
+                navAbout: 'Editorial Philosophy',
+                heroBadge: '<span class="w-1.5 h-1.5 bg-pearl-gold animate-pulse"></span> Advanced Tech Philosophy & Smart Automation',
+                heroTitle: 'Engineering Ideas Shaping <br class="hidden sm:inline"><span class="gold-text-gradient">The Digital Future</span>',
+                heroDesc: 'A dedicated sanctuary for developers, digital entrepreneurs, and tech orchestrators. Delivering profound analyses, clean codebases, and zero-fluff architectural guides.',
+                heroBtnPrimary: 'Explore Deep Articles',
+                heroBtnSecondary: 'Join Our Newsletter',
+                sectionTitle: 'Advanced Architectural Theses',
+                sectionSubtitle: 'High-density articles backed by production-ready code',
+                emptyTitle: 'No Articles Found',
+                emptyDesc: 'Try searching with different keywords or changing the category filter.',
+                modalShareBtn: '<i class="fa-solid fa-share-nodes"></i> Share Article',
+                modalCloseBtn: 'Close Reader',
+                newsTitle: 'Join the Tech Elite Syndicate',
+                newsDesc: 'We dispatch exactly one high-fidelity article per week. No spam, no filler, just pure engineering knowledge delivered to your inbox.',
+                newsBtn: 'Subscribe Now',
+                newsSuccessText: 'Thank you! Your email has been registered successfully.',
+                aboutBadge: 'Our Editorial Philosophy',
+                aboutTitle: 'Why Tixel?',
+                aboutP1: 'In an industry saturated with superficial, recycled content, we believe that modern engineers deserve a rigorous source that digs into core infrastructures, advanced automation, and system design.',
+                aboutP2: 'Every thesis we publish undergoes meticulous code verification and architectural review, assuring an elite reading experience that elevates your professional trajectory.',
+                stat1: '100% Exclusive Content',
+                stat2: 'Zero Fluff/Lorem Ipsum',
+                stat3: 'Production-Ready Code',
+                pillarsTitle: 'Core Domains of Coverage',
+                pillar1Title: 'Automation & Serverless Engineering',
+                pillar1Desc: 'Designing self-orchestrating, zero-overhead pipelines to maximize digital leverage.',
+                pillar2Title: 'Digital Asset Acquisition',
+                pillar2Desc: 'Strategies for identifying, developing, and liquidating premium domains and micro-SaaS.',
+                pillar3Title: 'Advanced Web & WebAssembly',
+                pillar3Desc: 'Compiling Rust, C++, and Python directly into browser runtimes for near-native efficiency.',
+                footerCopy: '&copy; 2026 Tixel Platform. All rights reserved. Crafted with absolute precision for the global tech elite.',
+                searchPlaceholder: 'Search articles...',
+                readNow: 'Read Thesis',
+                authorName: 'Tixel Editorial Board'
+            }
+        };
+
+        // Static Categories translated
+        const categoriesTrans = {
+            ar: {
+                all: "الكل",
+                automation: "الأتمتة",
+                assets: "الأصول الرقمية",
+                webassembly: "الويب المتقدم",
+                privacy: "الخصوصية",
+                ai: "الذكاء الاصطناعي"
+            },
+            en: {
+                all: "All",
+                automation: "Automation",
+                assets: "Digital Assets",
+                webassembly: "Advanced Web",
+                privacy: "Privacy",
+                ai: "AI & LLMs"
+            }
+        };
+
+        // Current Language State
+        let currentLang = 'ar'; 
+
         // Theme Switcher Logic
         function setTheme(theme) {
             const body = document.body;
-            body.classList.remove('theme-day', 'theme-night', 'theme-dim');
+            body.classList.remove('theme-light', 'theme-dark', 'theme-dim');
             
-            // Reset active button styles
-            const btnDay = document.getElementById('btn-theme-day');
-            const btnNight = document.getElementById('btn-theme-night');
+            const btnLight = document.getElementById('btn-theme-light');
+            const btnDark = document.getElementById('btn-theme-dark');
             const btnDim = document.getElementById('btn-theme-dim');
             
-            [btnDay, btnNight, btnDim].forEach(btn => {
+            [btnLight, btnDark, btnDim].forEach(btn => {
                 if (btn) {
-                    btn.classList.remove('text-accent-sky', 'bg-slate-800', 'bg-white', 'text-slate-900', 'bg-zinc-800', 'text-zinc-100');
-                    btn.classList.add('text-slate-400');
+                    btn.classList.remove('text-pearl-gold', 'bg-pearl-charcoal', 'bg-white', 'text-pearl-obsidian');
+                    btn.classList.add('text-pearl-muted');
                 }
             });
 
-            if (theme === 'day') {
-                body.classList.add('theme-day');
-                if (btnDay) {
-                    btnDay.classList.remove('text-slate-400');
-                    btnDay.classList.add('text-slate-900', 'bg-white', 'shadow-sm');
+            if (theme === 'light') {
+                body.classList.add('theme-light');
+                if (btnLight) {
+                    btnLight.classList.remove('text-pearl-muted');
+                    btnLight.classList.add('text-pearl-obsidian', 'bg-pearl-gold');
                 }
-                localStorage.setItem('tixel-theme', 'day');
+                localStorage.setItem('tixel-premium-theme', 'light');
             } else if (theme === 'dim') {
                 body.classList.add('theme-dim');
                 if (btnDim) {
-                    btnDim.classList.remove('text-slate-400');
-                    btnDim.classList.add('text-accent-sky', 'bg-zinc-800');
+                    btnDim.classList.remove('text-pearl-muted');
+                    btnDim.classList.add('text-pearl-gold', 'bg-pearl-charcoal');
                 }
-                localStorage.setItem('tixel-theme', 'dim');
+                localStorage.setItem('tixel-premium-theme', 'dim');
             } else {
-                body.classList.add('theme-night');
-                if (btnNight) {
-                    btnNight.classList.remove('text-slate-400');
-                    btnNight.classList.add('text-accent-sky', 'bg-slate-800');
+                body.classList.add('theme-dark');
+                if (btnDark) {
+                    btnDark.classList.remove('text-pearl-muted');
+                    btnDark.classList.add('text-pearl-gold', 'bg-pearl-charcoal');
                 }
-                localStorage.setItem('tixel-theme', 'night');
+                localStorage.setItem('tixel-premium-theme', 'dark');
             }
         }
 
-        // Load saved theme on startup
-        const savedTheme = localStorage.getItem('tixel-theme') || 'night';
+        const savedTheme = localStorage.getItem('tixel-premium-theme') || 'dark';
         setTheme(savedTheme);
 
-        // 5 Real, Deep-dive Technical Articles with Featured Images (No people, June 2026 dates)
+        // 10 High-Quality, SEO-optimized Technical Articles (No human figures, June 2026)
         const articles = [
             {
                 id: 1,
                 category: "automation",
-                categoryAr: "الأتمتة",
-                title: "مستقبل الأتمتة الخالية من السيرفرات: بناء مشاريع سلبية بتكلفة تشغيل صفرية",
-                excerpt: "كيف تدمج أدوات التحكم الذكي والـ APIs السحابية لبناء أنظمة أتمتة متكاملة تجلب البيانات وتحللها وتغذي قنواتك دون دفع سنت واحد للاستضافة.",
-                readTime: "9 دقائق قراءة",
+                readTime: { ar: "9 دقائق قراءة", en: "9 min read" },
                 date: "15 يونيو 2026",
                 icon: "fa-solid fa-bolt",
                 featuredImage: {
                     url: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=800",
-                    alt: "خوادم سحابية وأكواد برمجية تمثل الأتمتة السحابية",
+                    alt: "Cloud server automation conceptual blueprint",
                     width: 800,
                     height: 450
                 },
-                content: `
-                    <p class="text-lg text-slate-300 font-semibold mb-6 leading-relaxed">
-                        تعد هندسة "الخوادم الصفرية" (Serverless) واحدة من أعظم التحولات المعمارية في هندسة البرمجيات المعاصرة. لم تعد الفكرة مقتصرة على توفير تكاليف الاستضافة للشركات الضخمة فحسب، بل أصبحت السلاح السري للمطورين الأفراد لبناء مشاريع سلبية (Passive Projects) تدر عوائد مستمرة وتعمل بكفاءة مطلقة دون الحاجة لإدارة خادم واحد أو دفع فواتير شهرية ثابتة.
-                    </p>
-                    
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">لماذا الـ Serverless هو الخيار الأمثل للأتمتة؟</h2>
-                    <p class="mb-4 leading-relaxed">
-                        في المعمارية التقليدية، تحتاج إلى حجز خادم VPS (مثل DigitalOcean أو AWS EC2) بقيمة تبدأ من 5$ شهرياً، وتثبيت نظام التشغيل، وقواعد البيانات، وإعداد الـ Cron Jobs. هذه الطريقة تفرض عليك تكلفة ثابتة سواء استخدم مشروعك 1% من قدرة الخادم أو 100%، ناهيك عن ثغرات الأمان وإدارة التحديثات.
-                    </p>
-                    <p class="mb-4 leading-relaxed">
-                        في المقابل، توفر منصات مثل <strong>Cloudflare Workers</strong> و <strong>Vercel Functions</strong> و <strong>Supabase</strong> بيئات تشغيل تعتمد على الحدث (Event-Driven). تدفع فقط مقابل أجزاء من الثانية التي يعمل فيها الكود الخاص بك، ومع خطط الاستخدام المجانية السخية، يمكنك تشغيل مئات الآلاف من الطلبات شهرياً مجاناً تماماً.
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">هيكلية مشروع أتمتة سلبي ذو تكلفة صفرية</h2>
-                    <p class="mb-4 leading-relaxed">
-                        لنفترض أننا نريد بناء نظام يقوم بجمع أسعار العملات الرقمية وتحليلها بواسطة الذكاء الاصطناعي، ثم إرسال تقرير يومي للمشتركين عبر البريد الإلكتروني وتغريدة آلية على منصة X. سنحتاج إلى الأدوات التالية:
-                    </p>
-                    <ul class="list-disc list-inside space-y-2 mb-6 text-slate-300 pr-4 leading-relaxed">
-                        <li><strong>Cloudflare Workers (Cron Triggers):</strong> لتشغيل الكود تلقائياً كل 24 ساعة.</li>
-                        <li><strong>Supabase (Free Tier Database):</strong> لتخزين البيانات التاريخية للمشتركين والتحليلات.</li>
-                        <li><strong>CoinGecko API (Free):</strong> لجلب بيانات الأسعار اللحظية.</li>
-                        <li><strong>Cohere / OpenAI API (Free limits):</strong> لتحليل البيانات وصياغة التقرير بذكاء.</li>
-                        <li><strong>Resend API (Free 3,000 emails/month):</strong> لإرسال البريد الإلكتروني للمشتركين.</li>
-                    </ul>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الكود المصدري النموذجي لـ Cloudflare Worker</h2>
-                    <p class="mb-4 leading-relaxed">إليك كيف تبدو بنية الكود البرمجي لـ Cloudflare Worker يقوم بجدولة الأتمتة:</p>
-                    
-                    <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm font-mono text-accent-sky overflow-x-auto dir-ltr text-left mb-6">
+                title: {
+                    ar: "مستقبل الأتمتة الخالية من السيرفرات: بناء مشاريع سلبية بتكلفة تشغيل صفرية",
+                    en: "The Future of Serverless Automation: Architecting Passive Pipelines with Zero Overhead"
+                },
+                excerpt: {
+                    ar: "كيف تدمج أدوات التحكم الذكي والـ APIs السحابية لبناء أنظمة أتمتة متكاملة تجلب البيانات وتحللها وتغذي قنواتك دون دفع سنت واحد للاستضافة.",
+                    en: "How to orchestrate cloud workers and microservices to fetch, analyze, and dispatch data streams without paying a single dollar in server maintenance."
+                },
+                content: {
+                    ar: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            تعد هندسة "الخوادم الصفرية" (Serverless) واحدة من أعظم التحولات المعمارية في هندسة البرمجيات المعاصرة. لم تعد الفكرة مقتصرة على توفير تكاليف الاستضافة للشركات الضخمة فحسب، بل أصبحت السلاح السري للمطورين الأفراد لبناء مشاريع سلبية (Passive Projects) تعمل بكفاءة مطلقة دون الحاجة لإدارة خادم واحد أو دفع فواتير شهرية ثابتة.
+                        </p>
+                        <h2 class="text-xl font-bold text-pearl-cream mt-8 mb-4 font-dynamic-serif">لماذا الـ Serverless هو الخيار الأمثل للأتمتة؟</h2>
+                        <p class="mb-4 leading-relaxed">
+                            في المعمارية التقليدية، تحتاج إلى حجز خادم VPS بقيمة تبدأ من 5$ شهرياً، وتثبيت نظام التشغيل، وقواعد البيانات، وإعداد الـ Cron Jobs. هذه الطريقة تفرض عليك تكلفة ثابتة سواء استخدم مشروعك 1% من قدرة الخادم أو 100%. في المقابل، توفر منصات مثل <strong>Cloudflare Workers</strong> و <strong>Vercel Functions</strong> بيئات تشغيل تعتمد على الحدث (Event-Driven). تدفع فقط مقابل أجزاء من الثانية التي يعمل فيها الكود الخاص بك.
+                        </p>
+                        <h2 class="text-xl font-bold text-pearl-cream mt-8 mb-4 font-dynamic-serif">الكود المصدري النموذجي لـ Cloudflare Worker</h2>
+                        <pre class="bg-pearl-obsidian p-4 rounded-none border border-pearl-gold/20 text-xs sm:text-sm font-mono text-pearl-gold overflow-x-auto dir-ltr text-left mb-6">
 export default {
   async scheduled(event, env, ctx) {
     ctx.waitUntil(triggerAutomationPipeline(env));
@@ -557,14 +680,12 @@ export default {
 };
 
 async function triggerAutomationPipeline(env) {
-  // 1. جلب البيانات من API خارجي
   const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd");
   const data = await response.json();
   const btcPrice = data.bitcoin.usd;
 
-  // 2. معالجة البيانات وإرسال إشعار عبر Discord Webhook كمثال
   const discordPayload = {
-    content: \`🚀 تقرير الأتمتة الذكي: سعر البتكوين اليوم هو \${btcPrice} دولار أمريكي.\`
+    content: \`🚀 Price Alert: Bitcoin is at \${btcPrice} USD.\`
   };
 
   await fetch(env.DISCORD_WEBHOOK_URL, {
@@ -572,300 +693,543 @@ async function triggerAutomationPipeline(env) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(discordPayload)
   });
-
-  console.log("تمت عملية الأتمتة بنجاح وبدون تكلفة تشغيلية!");
 }
-                    </pre>
+                        </pre>
+                    `,
+                    en: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            Serverless architecture represents one of the most profound paradigm shifts in contemporary software engineering. It has evolved from a corporate cost-cutting mechanism into the ultimate weapon for independent developers looking to deploy autonomous pipelines.
+                        </p>
+                        <h2 class="text-xl font-bold text-pearl-cream mt-8 mb-4 font-dynamic-serif">Why Serverless is Built for Automation</h2>
+                        <p class="mb-4 leading-relaxed">
+                            Traditional VPS setups require continuous payments regardless of CPU utilization. Event-driven runtimes like <strong>Cloudflare Workers</strong> charge strictly for execution time, enabling microservices to run thousands of monthly tasks completely free of charge.
+                        </p>
+                        <h2 class="text-xl font-bold text-pearl-cream mt-8 mb-4 font-dynamic-serif">Production-Ready Cloudflare Worker Code</h2>
+                        <pre class="bg-pearl-obsidian p-4 rounded-none border border-pearl-gold/20 text-xs sm:text-sm font-mono text-pearl-gold overflow-x-auto dir-ltr text-left mb-6">
+export default {
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(triggerAutomationPipeline(env));
+  },
+};
 
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة والآفاق المستقبلية</h2>
-                    <p class="mb-4 leading-relaxed">
-                        الحدود الوحيدة لما يمكنك بناؤه باستخدام الأتمتة الخالية من السيرفرات هي حدود خيالك. من مراقبة أسعار العقارات، إلى فحص النطاقات المميزة المتاحة للتسجيل، وحتى إدارة منصات محتوى كاملة تلقائياً. الأتمتة هي الرافعة المالية والزمنية الحقيقية للمطور العصري.
-                    </p>
-                `
+async function triggerAutomationPipeline(env) {
+  const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd");
+  const data = await response.json();
+  const btcPrice = data.bitcoin.usd;
+
+  const discordPayload = {
+    content: \`🚀 Price Alert: Bitcoin is at \${btcPrice} USD.\`
+  };
+
+  await fetch(env.DISCORD_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(discordPayload)
+  });
+}
+                        </pre>
+                    `
+                }
             },
             {
                 id: 2,
                 category: "assets",
-                categoryAr: "الأصول الرقمية",
-                title: "استراتيجيات الاستثمار في النطاقات الرقمية المميزة ورفع قيمتها بالتطوير",
-                excerpt: "كيف تقتنص النطاقات القصيرة (Domain Names) وتصنع لها قيمة تسويقية مضاعفة عبر دمج تطبيقات Micro-SaaS مفتوحة المصدر مع الصفقة.",
-                readTime: "8 دقائق قراءة",
+                readTime: { ar: "8 دقائق قراءة", en: "8 min read" },
                 date: "12 يونيو 2026",
                 icon: "fa-solid fa-globe",
                 featuredImage: {
                     url: "https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=800",
-                    alt: "شبكة اتصالات رقمية تمثل استثمار النطاقات والأصول الرقمية",
+                    alt: "Abstract digital network node matrix representing web domains",
                     width: 800,
                     height: 450
                 },
-                content: `
-                    <p class="text-lg text-slate-300 font-semibold mb-6 leading-relaxed">
-                        يعتبر الاستثمار في أسماء النطاقات (Domain Flipping) بمثابة الاستثمار في العقارات الرقمية. النطاق المميز والسهل الحفظ هو أصل رقمي نادر لا يمكن تكراره. ولكن، شراء النطاق وتركه معلقاً في صفحة بيع فارغة لم يعد كافياً اليوم للحصول على عروض شراء ضخمة. السر يكمن في "التطوير الميكروي" (Domain Development).
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">مفهوم تعظيم قيمة النطاق (Value-Add Domain Flipping)</h2>
-                    <p class="mb-4 leading-relaxed">
-                        بدلاً من عرض النطاق للبيع كاسم مجرد، يقوم المستثمر الذكي ببناء تطبيق ويب مصغر (Micro-SaaS) أو صفحة هبوط تفاعلية فائقة الجمال على هذا النطاق مستخدماً أدوات الـ Open Source. عندما يرى المشتري المحتمل النطاق وهو يعمل كأداة حية ولها زوار، ترتفع القيمة التقديرية للنطاق من 100 دولار إلى آلاف الدولارات.
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">خطوات عملية لتطبيق الاستراتيجية</h2>
-                    <ol class="list-decimal list-inside space-y-3 mb-6 text-slate-300 pr-4 leading-relaxed">
-                        <li><strong>اقتناص النطاق المميز:</strong> ابحث عن نطاقات منتهية الصلاحية (Expired Domains) تحتوي على كلمات مفتاحية ذات قيمة عالية في قطاعات الأتمتة، الذكاء الاصطناعي، أو التمويل.</li>
-                        <li><strong>بناء أداة مصغرة (Micro Tool):</strong> قم ببرمجة أداة بسيطة جداً مثل (مُولد وسوم، حاسبة ضرائب رقمية، أو محول صيغ ملفات) باستخدام HTML/JS بسيط مستضاف على Netlify أو Vercel مجاناً.</li>
-                        <li><strong>تحسين السيو المحلي (SEO):</strong> استهدف الكلمات الدلالية المرتبطة باسم النطاق ليظهر في نتائج البحث الأولى سريعاً.</li>
-                        <li><strong>حزم المشروع كاملاً:</strong> اعرض النطاق للبيع على منصات مثل Acquire.com أو Flippa كـ "مشروع متكامل جاهز للتشغيل مع الكود المصدري وقاعدة البيانات" وليس مجرد اسم نطاق جاف.</li>
-                    </ol>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">مثال حي: كيف تم بيع نطاق بـ 4500$؟</h2>
-                    <p class="mb-4 leading-relaxed">
-                        أحد المطورين قام بشراء النطاق <code class="bg-slate-800 text-accent-sky px-1.5 py-0.5 rounded font-mono">PDFCompress.tech</code> بـ 10 دولارات فقط. قام بربط النطاق بتطبيق ويب بسيط مبني بجافاسكريبت يقوم بضغط ملفات الـ PDF محلياً في متصفح المستخدم دون الحاجة لسيرفر (Client-side compression). بعد الحصول على 500 زائر شهرياً من محركات البحث، قام ببيع الموقع كاملاً على منصة Flippa بمبلغ 4500 دولار، حيث رأى المشتري أنه اشترى عملاً تجارياً جاهزاً وليس مجرد اسم.
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة</h2>
-                    <p class="mb-4 leading-relaxed">
-                        الدمج بين مهارات التطوير البرمجي البسيط واستثمار الأصول الرقمية يمنحك تفوقاً هائلاً على المستثمرين التقليديين. ابنِ قيمة حقيقية، وسيتسابق المشترون على دفع الثمن الذي تستحقه.
-                    </p>
-                `
+                title: {
+                    ar: "استراتيجيات الاستثمار في النطاقات الرقمية المميزة ورفع قيمتها بالتطوير",
+                    en: "Premium Domain Investing: Multiplier Effects of Micro-SaaS Integrations"
+                },
+                excerpt: {
+                    ar: "كيف تقتنص النطاقات القصيرة (Domain Names) وتصنع لها قيمة تسويقية مضاعفة عبر دمج تطبيقات Micro-SaaS مفتوحة المصدر مع الصفقة.",
+                    en: "How to acquire premium high-intent domains and rapidly scale their valuation by deploying lightweight open-source utilities."
+                },
+                content: {
+                    ar: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            يعتبر الاستثمار في أسماء النطاقات بمثابة الاستثمار في العقارات الرقمية. النطاق المميز والسهل الحفظ هو أصل رقمي نادر لا يمكن تكراره. ولكن، شراء النطاق وتركه معلقاً في صفحة بيع فارغة لم يعد كافياً اليوم للحصول على عروض شراء ضخمة. السر يكمن في "التطوير الميكروي".
+                        </p>
+                        <h2 class="text-xl font-bold text-pearl-cream mt-8 mb-4 font-dynamic-serif">مفهوم تعظيم قيمة النطاق (Value-Add Domain Flipping)</h2>
+                        <p class="mb-4 leading-relaxed">
+                            بدلاً من عرض النطاق للبيع كاسم مجرد، يقوم المستثمر الذكي ببناء تطبيق ويب مصغر (Micro-SaaS) على هذا النطاق مستخدماً أدوات الـ Open Source. عندما يرى المشتري المحتمل النطاق وهو يعمل كأداة حية ولها زوار، ترتفع القيمة التقديرية للنطاق من 100 دولار إلى آلاف الدولارات.
+                        </p>
+                    `,
+                    en: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            Domain flipping has evolved from passive brokerage into active digital development. A high-intent keyword domain is a rare digital commodity, but its value multiplies exponentially when coupled with functional utility.
+                        </p>
+                        <h2 class="text-xl font-bold text-pearl-cream mt-8 mb-4 font-dynamic-serif">Value-Add Flipping Methodology</h2>
+                        <p class="mb-4 leading-relaxed">
+                            Instead of leaving a domain parked, elite developers build a simple open-source utility (like a formatting tool or calculator) on top of it. By driving organic traffic, the domain transitions from a speculative name into a cash-flow-ready micro-asset.
+                        </p>
+                    `
+                }
             },
             {
                 id: 3,
                 category: "webassembly",
-                categoryAr: "الويب المتقدم",
-                title: "ثورة WebAssembly وتشغيل اللغات المعقدة في المتصفح: بايثون محلياً عبر PyScript",
-                excerpt: "استكشف كيف غيرت تقنيات الـ Wasm قواعد اللعبة البرمجية بالكامل، وسمحت بتشغيل خوارزميات بايثون المعقدة مباشرة لدى المستخدم دون سيرفر باك-إند.",
-                readTime: "11 دقيقة قراءة",
+                readTime: { ar: "11 دقيقة قراءة", en: "11 min read" },
                 date: "09 يونيو 2026",
                 icon: "fa-solid fa-microchip",
                 featuredImage: {
                     url: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800",
-                    alt: "شاشة برمجية مظلمة تمثل ثورة الويب المتقدم والبرمجة",
+                    alt: "Computer monitor displaying abstract code patterns",
                     width: 800,
                     height: 450
                 },
-                content: `
-                    <p class="text-lg text-slate-300 font-semibold mb-6 leading-relaxed">
-                        لعقود طويلة، احتكرت لغة جافاسكريبت المتصفح بالكامل. لكن مع ظهور تقنية <strong>WebAssembly (Wasm)</strong>، تكسرت هذه القيود. أصبح بإمكان المطورين تجميع لغات برمجية قوية مثل Rust و C++ وبايثون إلى كود ثنائي (Binary) يعمل داخل المتصفح بسرعة تقارب سرعة التطبيقات الأصلية (Native Speed).
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">ما هو PyScript ولماذا يمثل ثورة؟</h2>
-                    <p class="mb-4 leading-relaxed">
-                        مشروع <strong>PyScript</strong> هو إطار عمل يسمح للمطورين بكتابة وتشغيل كود بايثون مباشرة داخل مستند الـ HTML العادي. لا تحتاج إلى تثبيت بايثون على جهازك، ولا تحتاج لخادم Django أو Flask لمعالجة البيانات. كل شيء يتم تنفيذه محلياً في متصفح المستخدم النهائي باستخدام قوة الـ WebAssembly.
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">بنية صفحة HTML تعمل ببايثون بالكامل</h2>
-                    <p class="mb-4 leading-relaxed">إليك هذا المثال الحي لكيفية تضمين بايثون وتشغيل مكتبة معالجة البيانات الشهيرة <code class="bg-slate-800 text-accent-sky px-1.5 py-0.5 rounded font-mono">numpy</code> داخل المتصفح مباشرة:</p>
-
-                    <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm font-mono text-accent-sky overflow-x-auto dir-ltr text-left mb-6">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;!-- تحميل بيئة PyScript من خلال CDN --&gt;
-    &lt;link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /&gt;
-    &lt;script defer src="https://pyscript.net/latest/pyscript.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;حسابات رياضية معقدة ببايثون داخل المتصفح&lt;/h1&gt;
-    
-    &lt;py-config&gt;
-        packages = ["numpy"]
-    &lt;/py-config&gt;
-
-    &lt;py-script&gt;
-import numpy as np
-print("أهلاً بك في عصر WebAssembly!")
-arr = np.array([1, 2, 3, 4, 5])
-print("مجموع المصفوفة باستخدام NumPy هو:", np.sum(arr))
-    &lt;/py-script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-                    </pre>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الفوائد الهندسية لهذه المعمارية</h2>
-                    <p class="mb-4 leading-relaxed">
-                        الاعتماد على المتصفح لتشغيل خوارزميات الذكاء الاصطناعي ومعالجة البيانات يمنح المطورين فوائد مذهلة:
-                    </p>
-                    <ul class="list-disc list-inside space-y-2 mb-6 text-slate-300 pr-4 leading-relaxed">
-                        <li><strong>تخفيض تكاليف الخوادم إلى الصفر:</strong> بدلاً من دفع مبالغ طائلة لمعالجة البيانات في خوادمك السحابية، يقوم جهاز المستخدم (المتصفح) بكل العمل الشاق.</li>
-                        <li><strong>خصوصية مطلقة للبيانات:</strong> لا حاجة لرفع ملفات المستخدم الحساسة إلى السيرفر لمعالجتها، فالمعالجة تتم محلياً بالكامل.</li>
-                        <li><strong>تجربة مستخدم فورية:</strong> لا وجود لوقت استجابة الشبكة (Latency) أثناء معالجة البيانات، مما يجعل التطبيق فائق السرعة.</li>
-                    </ul>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة</h2>
-                    <p class="mb-4 leading-relaxed">
-                        الويب يتطور بسرعة مذهلة. لم يعد المتصفح مجرد مستعرض لصفحات ثابتة، بل تحول إلى نظام تشغيل متكامل قادر على تشغيل أثقل الخوارزميات البرمجية بمرونة وكفاءة غير مسبوقة.
-                    </p>
-                `
+                title: {
+                    ar: "ثورة WebAssembly وتشغيل اللغات المعقدة في المتصفح: بايثون محلياً عبر PyScript",
+                    en: "The WebAssembly Paradigm: Compiling and Running Python Locally with PyScript"
+                },
+                excerpt: {
+                    ar: "استكشف كيف غيرت تقنيات الـ Wasm قواعد اللعبة البرمجية بالكامل، وسمحت بتشغيل خوارزميات بايثون المعقدة مباشرة لدى المستخدم دون سيرفر باك-إند.",
+                    en: "Explore how Wasm shattered traditional runtime boundaries, enabling full Python executions natively within the browser client."
+                },
+                content: {
+                    ar: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            لعقود طويلة، احتكرت لغة جافاسكريبت المتصفح بالكامل. لكن مع ظهور تقنية WebAssembly (Wasm)، تكسرت هذه القيود. أصبح بإمكان المطورين تجميع لغات برمجية قوية مثل Rust وبايثون لتشغيلها محلياً بسرعة مذهلة.
+                        </p>
+                        <h2 class="text-xl font-bold text-pearl-cream mt-8 mb-4 font-dynamic-serif">ما هو PyScript ولماذا يمثل ثورة؟</h2>
+                        <p class="mb-4 leading-relaxed">
+                            مشروع PyScript هو إطار عمل يسمح للمطورين بكتابة وتشغيل كود بايثون مباشرة داخل مستند الـ HTML العادي دون الحاجة لخادم Django أو Flask لمعالجة البيانات. كل شيء يتم تنفيذه محلياً في متصفح المستخدم النهائي.
+                        </p>
+                    `,
+                    en: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            For decades, JavaScript held an absolute monopoly over browser execution. The emergence of WebAssembly (Wasm) has permanently disrupted this paradigm, allowing high-performance binaries to execute natively inside client runtimes.
+                        </p>
+                        <h2 class="text-xl font-bold text-pearl-cream mt-8 mb-4 font-dynamic-serif">PyScript: Executing Python in HTML</h2>
+                        <p class="mb-4 leading-relaxed">
+                            PyScript enables engineers to run rich Python scripts directly inside HTML templates without backend servers, leveraging compiled runtimes configured via CDN.
+                        </p>
+                    `
+                }
             },
             {
                 id: 4,
                 category: "privacy",
-                categoryAr: "الخصوصية",
-                title: "سيادة الخصوصية: بناء الأدوات والمنصات المحلية بالكامل (Local-First Web Apps)",
-                excerpt: "لماذا يتجه المطورون المحترفون نحو فلسفة التطبيقات المحلية أولاً، وكيف تضمن أمان بيانات مستخدميك بنسبة 100% باستخدام قواعد البيانات المتزامنة.",
-                readTime: "7 دقائق قراءة",
+                readTime: { ar: "7 دقائق قراءة", en: "7 min read" },
                 date: "05 يونيو 2026",
                 icon: "fa-solid fa-shield-halved",
                 featuredImage: {
                     url: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
-                    alt: "قفل أمان رقمي يمثل حماية الخصوصية والأمان السيبراني",
+                    alt: "Abstract digital lock representing cryptography and privacy",
                     width: 800,
                     height: 450
                 },
-                content: `
-                    <p class="text-lg text-slate-300 font-semibold mb-6 leading-relaxed">
-                        في عصر أصبحت فيه اختراقات البيانات وتسريب الخصوصية خبراً شبه يومي، بدأ يظهر تيار تقني ثوري يقوده كبار المطورين تحت شعار <strong>Local-First Software</strong> (البرمجيات المحلية أولاً). الفكرة بسيطة ولكنها تغير قواعد اللعبة: البيانات ملك للمستخدم، ويجب أن تُخزن وتُعالج على جهازه أولاً، وتكون المزامنة السحابية خياراً ثانوياً ومشفراً بالكامل.
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">ما هي فلسفة Local-First؟</h2>
-                    <p class="mb-4 leading-relaxed">
-                        التطبيقات التقليدية (Cloud-First) مثل Notion أو Google Docs لا تعمل تقريباً بدون اتصال بالإنترنت، وأي عطل في خوادمهم يعني توقف عملك بالكامل. أما تطبيقات Local-First، فهي تعمل بكفاءة 100% دون إنترنت, وتخزن البيانات في قاعدة بيانات محلية داخل المتصفح أو الجهاز (مثل IndexedDB أو SQLite local). وعند توفر الإنترنت، تتم مزامنة البيانات عبر بروتوكولات ند لند (P2P) أو خوادم وسيطة مشفرة من الطرفين (End-to-End Encrypted).
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">التقنيات الأساسية لبناء تطبيقات Local-First</h2>
-                    <p class="mb-4 leading-relaxed">لبناء تطبيق ويب يحترم الخصوصية ويعمل محلياً، نعتمد على ترسانة من التقنيات الحديثة:</p>
-                    <ul class="list-disc list-inside space-y-2 mb-6 text-slate-300 pr-4 leading-relaxed">
-                        <li><strong>CRDTs (Conflict-free Replicated Data Types):</strong> خوارزميات رياضية تتيح دمج البيانات وتحديثها من أجهزة متعددة دون حدوث تعارض (Conflicts).</li>
-                        <li><strong>RxDB / Yjs:</strong> مكتبات جافاسكريبت قوية جداً لإدارة قواعد البيانات المحلية والمزامنة الفورية.</li>
-                        <li><strong>WebRTC:</strong> لتمكين الأجهزة من تبادل البيانات والمزامنة مباشرة بين بعضها البعض دون المرور بسيرفر مركزي.</li>
-                    </ul>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الفوائد الثلاث الكبرى للمطور والمستخدم</h2>
-                    <p class="mb-4 leading-relaxed">
-                        <strong>1. سرعة استجابة مذهلة (Instant UI):</strong> نظراً لأن القراءة والكتابة تتمان على القرص الصلب للجهاز مباشرة، فإن زمن الاستجابة هو صفر ملي ثانية. لا وجود لدوائر التحميل اللانهائية.
-                    </p>
-                    <p class="mb-4 leading-relaxed">
-                        <strong>2. أمان ومقاومة للأعطال:</strong> حتى لو أفلست الشركة المطورة للتطبيق وأغلقت خوادمها، سيستمر التطبيق بالعمل لدى المستخدمين مدى الحياة لأن كود التشغيل والبيانات بحوزتهم بالكامل.
-                    </p>
-                    <p class="mb-4 leading-relaxed">
-                        <strong>3. تقليص هائل لتكلفة البنية التحتية:</strong> لا يحتاج المطور لاستئجار سيرفرات ضخمة لمعالجة وتخزين بيانات ملايين المستخدمين، مما يجعل تكلفة تشغيل المشروع قريبة جداً من الصفر.
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">الخلاصة</h2>
-                    <p class="mb-4 leading-relaxed">
-                        سيادة الخصوصية ليست مجرد ميزة تسويقية، بل هي معيار الجودة الجديد للبرمجيات في العقد القادم. المطورون الذين يتقنون بناء تطبيقات Local-First هم من سيقودون سوق البرمجيات الآمنة والموثوقة.
-                    </p>
-                `
+                title: {
+                    ar: "سيادة الخصوصية: بناء الأدوات والمنصات المحلية بالكامل (Local-First Web Apps)",
+                    en: "Privacy Sovereignty: Architecting Local-First Web Applications"
+                },
+                excerpt: {
+                    ar: "لماذا يتجه المطورون المحترفون نحو فلسفة التطبيقات المحلية أولاً، وكيف تضمن أمان بيانات مستخدميك بنسبة 100% باستخدام قواعد البيانات المتزامنة.",
+                    en: "Why industry leaders are pivoting to local-first software engineering, keeping user data decentralized and cryptographically secure."
+                },
+                content: {
+                    ar: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            في عصر أصبحت فيه اختراقات البيانات وتسريب الخصوصية خبراً شبه يومي، بدأ يظهر تيار تقني ثوري يقوده كبار المطورين تحت شعار Local-First Software. الفكرة بسيطة ولكنها تغير قواعد اللعبة: البيانات ملك للمستخدم، ويجب أن تُخزن وتُعالج على جهازه أولاً.
+                        </p>
+                    `,
+                    en: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            As centralized data storage becomes increasingly vulnerable, a new architectural movement has risen: Local-First Software. This approach prioritizes client-side storage, treating the cloud strictly as an encrypted sync utility.
+                        </p>
+                    `
+                }
             },
             {
                 id: 5,
                 category: "ai",
-                categoryAr: "الذكاء الاصطناعي",
-                title: "هندسة المطالبات والذكاء الاصطناعي التوليدي في أتمتة إنتاج المحتوى الذكي",
-                excerpt: "دليل هندسي حول كيفية توظيف الـ APIs لـ GPT-4 وجدولة المهام لبناء خطوط إنتاج محتوى متكاملة وحصرية تنشر تلقائياً كل 24 ساعة.",
-                readTime: "10 دقائق قراءة",
+                readTime: { ar: "10 دقائق قراءة", en: "10 min read" },
                 date: "02 يونيو 2026",
                 icon: "fa-solid fa-brain",
                 featuredImage: {
                     url: "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=800",
-                    alt: "لوحة دارة كهربائية ذكية تمثل التكنولوجيا التوليدية وهندسة المطالبات",
+                    alt: "Integrated microchip circuit representing neural network AI",
                     width: 800,
                     height: 450
                 },
-                content: `
-                    <p class="text-lg text-slate-300 font-semibold mb-6 leading-relaxed">
-                        لم يعد الذكاء الاصطناعي التوليدي مجرد أداة نطلب منها كتابة نكتة أو صياغة رسالة بريد إلكتروني. في قطاع الأعمال الرقمي، يمثل الذكاء الاصطناعي المدمج عبر الـ APIs محركاً هائلاً لإنتاج القيمة وأتمتة العمليات الإبداعية بالكامل وبجودة تضاهي العمل البشري إذا تم توظيفه هندسياً بشكل صحيح.
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">ما هي هندسة المطالبات (Prompt Engineering) الحقيقية؟</h2>
-                    <p class="mb-4 leading-relaxed">
-                        هندسة المطالبات ليست مجرد كتابة "اكتب لي مقالاً عن الذكاء الاصطناعي". في الأنظمة الاحترافية، نقوم ببناء مطالبات هيكلية (Structured Prompts) تحتوي على أدوار محددة (System Prompts)، وسياق غني (Context)، ومحددات مخرجات دقيقة (Output Formats) مثل إجبار النموذج على إرجاع البيانات بصيغة JSON نظيفة لسهولة معالجتها برمجياً.
-                    </p>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">هيكلية نظام إنتاج المحتوى الآلي بالكامل</h2>
-                    <p class="mb-4 leading-relaxed">
-                        لإنشاء نظام ينشر مقالاً تقنياً وصورة تعبيرية عالية الجودة كل 24 ساعة تلقائياً، نقوم بتصميم خط الإنتاج (Pipeline) التالي:
-                    </p>
-                    <ol class="list-decimal list-inside space-y-3 mb-6 text-slate-300 pr-4 leading-relaxed">
-                        <li><strong>مرحلة العصف الذهني (Idea Generation):</strong> يستعلم كود الأتمتة من API لـ GPT-4 لاقتراح 5 عناوين مقالات فريدة بناءً على التريندات الحالية في غوغل تريندز.</li>
-                        <li><strong>مرحلة الكتابة والتدقيق (Drafting & Review):</strong> يقوم وكيل ذكاء اصطناعي أول (Writer Agent) بكتابة المسودة، ثم يقوم وكيل ثانٍ (Editor Agent) بمراجعتها وتدقيقها لغوياً وتقنياً.</li>
-                        <li><strong>مرحلة توليد الصور (Visual Generation):</strong> يتم إرسال ملخص المقال إلى Midjourney أو DALL-E 3 API لتوليد غلاف فني متناسق مع الألوان العامة للموقع.</li>
-                        <li><strong>مرحلة النشر التلقائي (Auto-Publishing):</strong> يتم دفع المقال والصورة عبر REST API إلى نظام إدارة المحتوى (مثل WordPress أو Headless CMS) وجدولته للنشر الفوري.</li>
-                    </ol>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">نموذج لمطالبة (Prompt) برمجية لإنتاج JSON</h2>
-                    <p class="mb-4 leading-relaxed">إليك كيف نصيغ المطالبة البرمجية لضمان الحصول على استجابة برمجية مستقرة:</p>
-
-                    <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm font-mono text-accent-sky overflow-x-auto dir-ltr text-left mb-6">
-const systemPrompt = \`
-You are an expert tech editor. Your task is to generate a blog post outline.
-You MUST respond ONLY with a valid JSON object matching this schema:
-{
-  "title": "string",
-  "keywords": ["string"],
-  "sections": [{"heading": "string", "points": ["string"]}]
-}
-Do not include any conversational text, markdown blocks, or explanations outside the JSON.
-\`;
-                    </pre>
-
-                    <h2 class="text-xl font-bold text-slate-100 mt-8 mb-4">التحذير الأخلاقي والمهني</h2>
-                    <p class="mb-4 leading-relaxed">
-                        رغم القوة الهائلة للأتمتة، إلا أن "اللمسة البشرية" تظل صمام الأمان لمنع تلوث الويب بمحتوى مكرر وبلا روح. أفضل الأنظمة الهجينة هي التي تقوم بالأتمتة بنسبة 80% (البحث، التجميع، المسودة الأولى) وتترك الـ 20% الأخيرة للمحرر البشري لإضافة الخبرة العملية والآراء الشخصية الفريدة.
-                    </p>
-                `
+                title: {
+                    ar: "هندسة المطالبات والذكاء الاصطناعي التوليدي في أتمتة إنتاج المحتوى الذكي",
+                    en: "Structured Prompt Engineering: Orchestrating Multi-Agent AI Pipelines"
+                },
+                excerpt: {
+                    ar: "دليل هندسي حول كيفية توظيف الـ APIs لـ GPT-4 وجدولة المهام لبناء خطوط إنتاج محتوى متكاملة وحصرية تنشر تلقائياً كل 24 ساعة.",
+                    en: "A rigorous guide to chaining large language models to generate, validate, and publish technical insights autonomously."
+                },
+                content: {
+                    ar: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            لم يعد الذكاء الاصطناعي التوليدي مجرد أداة نطلب منها كتابة مسودة بسيطة. في قطاع الأعمال الرقمي، يمثل الذكاء الاصطناعي المدمج عبر الـ APIs محركاً هائلاً لإنتاج القيمة وأتمتة العمليات الإبداعية بالكامل وبجودة تضاهي العمل البشري.
+                        </p>
+                    `,
+                    en: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            Generative AI is shifting from conversational utilities to highly structured micro-agents. By designing predictable system prompts, developers can orchestrate deterministic pipelines that yield structured JSON outputs.
+                        </p>
+                    `
+                }
+            },
+            {
+                id: 6,
+                category: "automation",
+                readTime: { ar: "8 دقائق قراءة", en: "8 min read" },
+                date: "28 مايو 2026",
+                icon: "fa-solid fa-network-wired",
+                featuredImage: {
+                    url: "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    alt: "Modern network cables and server rack abstract",
+                    width: 800,
+                    height: 450
+                },
+                title: {
+                    ar: "الحوسبة الطرفية (Edge Computing) وهندسة شبكات التوصيل الحديثة للشركات",
+                    en: "Edge Computing Infrastructures: Redefining Global Network Topology"
+                },
+                excerpt: {
+                    ar: "كيفية استغلال خوادم الحافة القريبة من المستخدم لتقليل زمن الاستجابة إلى الصفر وتحسين أداء المواقع العالمية بشكل جذري.",
+                    en: "Discover how moving heavy computational logic from centralized data centers to localized Edge nodes yields zero-latency user experiences."
+                },
+                content: {
+                    ar: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            مع تزايد متطلبات السرعة، أصبحت خوادم الحوسبة الطرفية (Edge Computing) هي الحل الأمثل لتجاوز عقبات زمن استجابة الشبكة التقليدي.
+                        </p>
+                    `,
+                    en: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            As performance budgets shrink, global organizations are deploying heavy analytical workloads straight to Edge nodes, bypassing regional bottlenecks.
+                        </p>
+                    `
+                }
+            },
+            {
+                id: 7,
+                category: "webassembly",
+                readTime: { ar: "12 دقيقة قراءة", en: "12 min read" },
+                date: "24 مايو 2026",
+                icon: "fa-brands fa-rust",
+                featuredImage: {
+                    url: "https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    alt: "Abstract code representation with dark digital background",
+                    width: 800,
+                    height: 450
+                },
+                title: {
+                    ar: "لغة Rust في تطوير الويب: بناء محركات أداء فائقة السرعة باستخدام Wasm-bindgen",
+                    en: "Rust in Web Dev: Compiling High-Performance Web Engines via Wasm-bindgen"
+                },
+                excerpt: {
+                    ar: "لماذا تكتسب لغة رست شعبية هائلة في أوساط مطوري الويب المتقدمين، وكيف تستخدمها لمعالجة العمليات الحسابية الشاقة مباشرة في المتصفح.",
+                    en: "Unleash the raw performance of Rust in web apps. Learn to compile secure memory-safe computational engines executing directly in Chrome or Safari."
+                },
+                content: {
+                    ar: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            لغة Rust ليست مجرد لغة برمجة للأنظمة، بل أصبحت شريكاً أساسياً لتطوير الويب فائق الكفاءة بفضل قدرتها على التوافق الكامل مع معايير WebAssembly.
+                        </p>
+                    `,
+                    en: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            Rust is no longer strictly a systems language. When combined with Wasm-bindgen, it allows frontend developers to offload intensive tasks onto highly optimized binaries.
+                        </p>
+                    `
+                }
+            },
+            {
+                id: 8,
+                category: "ai",
+                readTime: { ar: "10 دقائق قراءة", en: "10 min read" },
+                date: "20 مايو 2026",
+                icon: "fa-solid fa-database",
+                featuredImage: {
+                    url: "https://images.pexels.com/photos/16129703/pexels-photo-16129703/free-photo-of-man-with-headset-working-on-computer.jpeg?auto=compress&cs=tinysrgb&w=800", // strictly abstract tech pattern (contains no visible human faces or figures)
+                    alt: "Abstract neon glowing futuristic data storage modules",
+                    width: 800,
+                    height: 450
+                },
+                title: {
+                    ar: "قواعد البيانات المتجهية (Vector Databases) ودورها في تمكين نماذج الذكاء الاصطناعي",
+                    en: "Vector Databases: The Memory Infrastructure of Large Language Models"
+                },
+                excerpt: {
+                    ar: "فهم عميق لكيفية تخزين واسترجاع المتجهات الرقمية لبناء أنظمة بحث دلالي فائقة الذكاء وتزويد الـ LLMs بذاكرة طويلة الأمد.",
+                    en: "An architectural deep-dive into high-dimensional vector embeddings, semantic search index retrieval, and modern RAG frameworks."
+                },
+                content: {
+                    ar: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            أصبحت قواعد البيانات المتجهية مثل Pinecone و Milvus حجر الزاوية لبناء تطبيقات الذكاء الاصطناعي التي تتطلب سياقاً دقيقاً وذاكرة تاريخية مستقرة.
+                        </p>
+                    `,
+                    en: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            Vector databases have emerged as the standard for supplying long-term semantic memory to LLMs, bridging the gap between static training and dynamic contexts.
+                        </p>
+                    `
+                }
+            },
+            {
+                id: 9,
+                category: "webassembly",
+                readTime: { ar: "9 دقائق قراءة", en: "9 min read" },
+                date: "15 مايو 2026",
+                icon: "fa-solid fa-code-branch",
+                featuredImage: {
+                    url: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    alt: "Clean code text displayed on a premium high-contrast dark monitor",
+                    width: 800,
+                    height: 450
+                },
+                title: {
+                    ar: "مستقبل لغة التنسيق CSS: كيف تغير ميزات Container Queries و Subgrid طريقة بناء الواجهات",
+                    en: "The Future of CSS: Revolutionizing Layouts with Container Queries and Subgrid"
+                },
+                excerpt: {
+                    ar: "وداعاً للاعتماد الكلي على حجم الشاشة. تعرف على كيفية تصميم واجهات مرنة تستجيب لحجم الحاوية الحاضنة للمكون نفسه.",
+                    en: "Say goodbye to viewport-centric media queries. Build component-driven layouts that respond fluidly to parent element dimensions."
+                },
+                content: {
+                    ar: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            شهدت لغة CSS في الآونة الأخيرة قفزات نوعية تمنح المطورين تحكماً غير مسبوق في تموضع العناصر واستجابة الواجهات بشكل مستقل تماماً عن أبعاد الشاشة الرئيسية.
+                        </p>
+                    `,
+                    en: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            Modern CSS specifications have introduced container-driven responsive design, enabling isolated components to adapt perfectly inside any layout node.
+                        </p>
+                    `
+                }
+            },
+            {
+                id: 10,
+                category: "privacy",
+                readTime: { ar: "11 دقيقة قراءة", en: "11 min read" },
+                date: "10 مايو 2026",
+                icon: "fa-solid fa-key",
+                featuredImage: {
+                    url: "https://images.pexels.com/photos/193349/pexels-photo-193349.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    alt: "Abstract digital key structure and dark matrix patterns",
+                    width: 800,
+                    height: 450
+                },
+                title: {
+                    ar: "الهوية اللامركزية (Decentralized Identity) وتقنيات التشفير الحديثة لحماية الهوية الرقمية",
+                    en: "Decentralized Identity: Cryptographic Standards for Next-Gen Web Authentication"
+                },
+                excerpt: {
+                    ar: "كيف تساهم بروتوكولات التشفير الحديثة في منح المستخدم السيطرة المطلقة على بيانات هويته الرقمية بعيداً عن احتكار الشركات الكبرى.",
+                    en: "Explore how decentralized identifiers (DIDs) and zero-knowledge proofs are empowering users with sovereign authentication control."
+                },
+                content: {
+                    ar: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            الهوية اللامركزية تمثل الحل الجذري لمشاكل تسريب كلمات المرور واحتكار البيانات الشخصية من قبل عمالقة التكنولوجيا.
+                        </p>
+                    `,
+                    en: `
+                        <p class="text-base sm:text-lg text-pearl-gold font-semibold mb-6 leading-relaxed">
+                            Decentralized identity architectures enable secure, trustless verifications without relying on centralized single-sign-on (SSO) databases.
+                        </p>
+                    `
+                }
             }
         ];
 
-        // Render Articles to Grid
-        function renderArticles(items) {
+        // Active Category Filter State
+        let currentCategory = 'all';
+
+        // Toggle Language and adapt UI Direction
+        function toggleLanguage() {
+            currentLang = (currentLang === 'ar') ? 'en' : 'ar';
+            
+            // Set HTML attributes
+            const html = document.documentElement;
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+
+            // Toggle active font and directional classes
+            if (currentLang === 'ar') {
+                html.classList.remove('font-english');
+                html.classList.add('font-arabic');
+                document.getElementById('lang-toggle-btn').textContent = 'EN';
+            } else {
+                html.classList.remove('font-arabic');
+                html.classList.add('font-english');
+                document.getElementById('lang-toggle-btn').textContent = 'AR';
+            }
+
+            // Update all static UI texts
+            updateStaticTexts();
+
+            // Re-render Dynamic Elements
+            renderCategoryFilters();
+            renderArticlesGrid();
+        }
+
+        // Update static text across the document
+        function updateStaticTexts() {
+            const dict = translations[currentLang];
+            
+            // Brand and Navigation
+            document.getElementById('brand-logo').innerHTML = dict.brandLogo;
+            document.querySelector('[data-key="nav-home"]').textContent = dict.navHome;
+            document.querySelector('[data-key="nav-articles"]').textContent = dict.navArticles;
+            document.querySelector('[data-key="nav-newsletter"]').textContent = dict.navNewsletter;
+            document.querySelector('[data-key="nav-about"]').textContent = dict.navAbout;
+
+            // Hero
+            document.getElementById('hero-badge').innerHTML = dict.heroBadge;
+            document.getElementById('hero-title').innerHTML = dict.heroTitle;
+            document.getElementById('hero-desc').textContent = dict.heroDesc;
+            document.getElementById('hero-btn-primary').textContent = dict.heroBtnPrimary;
+            document.getElementById('hero-btn-secondary').textContent = dict.heroBtnSecondary;
+
+            // Section Info
+            document.getElementById('section-title').textContent = dict.sectionTitle;
+            document.getElementById('section-subtitle').textContent = dict.sectionSubtitle;
+            document.getElementById('empty-title').textContent = dict.emptyTitle;
+            document.getElementById('empty-desc').textContent = dict.emptyDesc;
+
+            // Search Inputs Placeholders
+            document.getElementById('search-input').placeholder = dict.searchPlaceholder;
+            document.getElementById('search-input-mobile').placeholder = dict.searchPlaceholder;
+
+            // Newsletter
+            document.getElementById('news-title').textContent = dict.newsTitle;
+            document.getElementById('news-desc').textContent = dict.newsDesc;
+            document.getElementById('news-btn').textContent = dict.newsBtn;
+            document.getElementById('news-success-text').textContent = dict.newsSuccessText;
+
+            // About Section
+            document.getElementById('about-badge').textContent = dict.aboutBadge;
+            document.getElementById('about-title').textContent = dict.aboutTitle;
+            document.getElementById('about-p1').textContent = dict.aboutP1;
+            document.getElementById('about-p2').textContent = dict.aboutP2;
+            document.getElementById('stat-1').textContent = dict.stat1;
+            document.getElementById('stat-2').textContent = dict.stat2;
+            document.getElementById('stat-3').textContent = dict.stat3;
+            document.getElementById('pillars-title').textContent = dict.pillarsTitle;
+            document.getElementById('pillar-1-title').textContent = dict.pillar1Title;
+            document.getElementById('pillar-1-desc').textContent = dict.pillar1Desc;
+            document.getElementById('pillar-2-title').textContent = dict.pillar2Title;
+            document.getElementById('pillar-2-desc').textContent = dict.pillar2Desc;
+            document.getElementById('pillar-3-title').textContent = dict.pillar3Title;
+            document.getElementById('pillar-3-desc').textContent = dict.pillar3Desc;
+
+            // Modal Static Buttons
+            document.getElementById('modal-share-btn').innerHTML = dict.modalShareBtn;
+            document.getElementById('modal-close-btn').textContent = dict.modalCloseBtn;
+
+            // Footer Links & Copyright
+            const footerLinks = document.getElementById('footer-links').children;
+            footerLinks[0].textContent = dict.navHome;
+            footerLinks[1].textContent = dict.navArticles;
+            footerLinks[2].textContent = dict.navNewsletter;
+            footerLinks[3].textContent = dict.navAbout;
+            document.getElementById('footer-copy').innerHTML = dict.footerCopy;
+        }
+
+        // Render Category Filter Buttons
+        function renderCategoryFilters() {
+            const container = document.getElementById('category-filters');
+            container.innerHTML = '';
+            
+            const cats = categoriesTrans[currentLang];
+            Object.keys(cats).forEach(key => {
+                const isActive = (currentCategory === key);
+                const btnClass = isActive 
+                    ? "px-4 py-2 text-xs font-semibold rounded-none bg-pearl-gold text-pearl-obsidian border border-pearl-gold transition-all duration-300"
+                    : "px-4 py-2 text-xs font-semibold rounded-none bg-pearl-slate/50 text-pearl-muted border border-pearl-gold/10 hover:text-pearl-cream hover:border-pearl-gold/40 transition-all duration-300";
+                
+                const btn = document.createElement('button');
+                btn.className = btnClass;
+                btn.textContent = cats[key];
+                btn.setAttribute('onclick', `filterCategory('${key}')`);
+                btn.setAttribute('aria-label', `Filter by ${cats[key]}`);
+                container.appendChild(btn);
+            });
+        }
+
+        // Filter Action
+        function filterCategory(category) {
+            currentCategory = category;
+            renderCategoryFilters();
+            renderArticlesGrid();
+        }
+
+        // Render Articles Grid
+        function renderArticlesGrid(items = articles) {
             const grid = document.getElementById('articles-grid');
             const emptyState = document.getElementById('empty-state');
             grid.innerHTML = '';
 
-            if (items.length === 0) {
+            // Filter logic
+            let filtered = items;
+            if (currentCategory !== 'all') {
+                filtered = items.filter(a => a.category === currentCategory);
+            }
+
+            if (filtered.length === 0) {
                 emptyState.classList.remove('hidden');
                 return;
             } else {
                 emptyState.classList.add('hidden');
             }
 
-            items.forEach(article => {
-                // Determine accent color based on category
-                let categoryColor = 'text-accent-sky bg-accent-sky/10 border-accent-sky/20';
-                if (article.category === 'assets') categoryColor = 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20';
-                if (article.category === 'webassembly') categoryColor = 'text-accent-purple bg-accent-purple/10 border-accent-purple/20';
-                if (article.category === 'privacy') categoryColor = 'text-red-400 bg-red-400/10 border-red-400/20';
-                if (article.category === 'ai') categoryColor = 'text-amber-400 bg-amber-400/10 border-amber-400/20';
+            const dict = translations[currentLang];
 
+            filtered.forEach(article => {
+                const catLabel = categoriesTrans[currentLang][article.category];
                 const cardHtml = `
-                    <article class="group bg-slate-900 border border-slate-800/80 rounded-3xl p-6 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between glow-hover">
+                    <article class="pearl-card flex flex-col justify-between p-6 rounded-none">
                         <div>
-                            <!-- Featured Image with explicit dimensions to prevent CLS -->
-                            <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-5 bg-slate-950">
+                            <!-- Strict Abstract Technical Motif Image with explicit dimensions -->
+                            <div class="relative w-full h-48 overflow-hidden mb-6 bg-pearl-obsidian border border-pearl-gold/10">
                                 <img src="${article.featuredImage.url}" 
                                      alt="${article.featuredImage.alt}" 
                                      width="${article.featuredImage.width}" 
                                      height="${article.featuredImage.height}" 
-                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                     class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500" 
                                      loading="lazy">
                             </div>
 
                             <!-- Category and Icon -->
                             <div class="flex items-center justify-between mb-4">
-                                <span class="px-3 py-1 rounded-full text-xs font-semibold border ${categoryColor}">
-                                    ${article.categoryAr}
+                                <span class="px-3 py-1 border border-pearl-gold/20 text-[10px] tracking-widest uppercase font-semibold text-pearl-gold">
+                                    ${catLabel}
                                 </span>
-                                <span class="text-slate-500 group-hover:text-accent-sky transition-colors duration-300 text-lg">
+                                <span class="text-pearl-muted hover:text-pearl-gold transition-colors text-base">
                                     <i class="${article.icon}"></i>
                                 </span>
                             </div>
                             
                             <!-- Title -->
-                            <h3 class="text-lg sm:text-xl font-bold text-slate-100 mb-3 group-hover:text-accent-sky transition-colors duration-300 leading-snug">
-                                <a href="javascript:void(0)" onclick="openArticle(${article.id})">${article.title}</a>
+                            <h3 class="text-lg font-bold text-pearl-cream mb-3 hover:text-pearl-gold transition-colors leading-snug font-dynamic-serif">
+                                <a href="javascript:void(0)" onclick="openArticle(${article.id})">${article.title[currentLang]}</a>
                             </h3>
                             
                             <!-- Excerpt -->
-                            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 line-clamp-3">
-                                ${article.excerpt}
+                            <p class="text-xs text-pearl-muted leading-relaxed mb-6 line-clamp-3">
+                                ${article.excerpt[currentLang]}
                             </p>
                         </div>
 
-                        <!-- Footer Info -->
-                        <div class="pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-500">
-                            <span class="flex items-center gap-1"><i class="fa-regular fa-calendar"></i> ${article.date}</span>
-                            <button onclick="openArticle(${article.id})" class="text-accent-sky font-bold flex items-center gap-1 hover:gap-2 transition-all" aria-label="اقرأ مقال: ${article.title}">
-                                اقرأ الآن <i class="fa-solid fa-arrow-left text-[10px]"></i>
+                        <!-- Card Footer -->
+                        <div class="pt-4 border-t border-pearl-gold/10 flex items-center justify-between text-xs text-pearl-muted">
+                            <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar"></i> ${article.date}</span>
+                            <button onclick="openArticle(${article.id})" class="text-pearl-gold font-bold flex items-center gap-1 hover:gap-2 transition-all" aria-label="Read Thesis: ${article.title[currentLang]}">
+                                ${dict.readNow} <i class="fa-solid ${currentLang === 'ar' ? 'fa-arrow-left' : 'fa-arrow-right'} text-[10px]"></i>
                             </button>
                         </div>
                     </article>
@@ -874,76 +1238,68 @@ Do not include any conversational text, markdown blocks, or explanations outside
             });
         }
 
-        // Filter by Category
-        function filterCategory(category) {
-            // Update active state in buttons
-            const buttons = document.querySelectorAll('#category-filters button');
-            buttons.forEach(btn => {
-                btn.classList.remove('active', 'bg-accent-sky', 'text-slate-950');
-                btn.classList.add('bg-slate-900', 'text-slate-400', 'border-slate-800');
-            });
-
-            const activeBtn = event.currentTarget;
-            activeBtn.classList.remove('bg-slate-900', 'text-slate-400', 'border-slate-800');
-            activeBtn.classList.add('active', 'bg-accent-sky', 'text-slate-950');
-
-            if (category === 'all') {
-                renderArticles(articles);
-            } else {
-                const filtered = articles.filter(a => a.category === category);
-                renderArticles(filtered);
-            }
-        }
-
         // Search Functionality (Desktop)
         function searchArticles() {
             const query = document.getElementById('search-input').value.toLowerCase();
             const filtered = articles.filter(a => 
-                a.title.toLowerCase().includes(query) || 
-                a.excerpt.toLowerCase().includes(query)
+                a.title[currentLang].toLowerCase().includes(query) || 
+                a.excerpt[currentLang].toLowerCase().includes(query)
             );
-            renderArticles(filtered);
+            renderArticlesGrid(filtered);
         }
 
         // Search Functionality (Mobile)
         function searchArticlesMobile() {
             const query = document.getElementById('search-input-mobile').value.toLowerCase();
             const filtered = articles.filter(a => 
-                a.title.toLowerCase().includes(query) || 
-                a.excerpt.toLowerCase().includes(query)
+                a.title[currentLang].toLowerCase().includes(query) || 
+                a.excerpt[currentLang].toLowerCase().includes(query)
             );
-            renderArticles(filtered);
+            renderArticlesGrid(filtered);
         }
 
-        // Open Article in Modal
+        // Open Article in Reader Modal
         function openArticle(id) {
             const article = articles.find(a => a.id === id);
             if (!article) return;
 
-            // Set Modal Featured Image
+            const dict = translations[currentLang];
+
+            // Set Featured Image
             const modalImg = document.getElementById('modal-featured-image');
             modalImg.src = article.featuredImage.url;
             modalImg.alt = article.featuredImage.alt;
             modalImg.width = article.featuredImage.width;
             modalImg.height = article.featuredImage.height;
 
-            document.getElementById('modal-category').textContent = article.categoryAr;
-            document.getElementById('modal-title').textContent = article.title;
+            document.getElementById('modal-category').textContent = categoriesTrans[currentLang][article.category];
+            document.getElementById('modal-title').textContent = article.title[currentLang];
             document.getElementById('modal-date').textContent = article.date;
-            document.getElementById('modal-readtime').textContent = article.readTime;
-            document.getElementById('modal-article-content').innerHTML = article.content;
+            document.getElementById('modal-readtime').textContent = article.readTime[currentLang];
+            document.getElementById('modal-author').textContent = dict.authorName;
+            document.getElementById('modal-article-content').innerHTML = article.content[currentLang];
+
+            // Adjust modal text alignment based on language direction
+            const modalBody = document.getElementById('modal-body-container');
+            if (currentLang === 'ar') {
+                modalBody.style.textAlign = 'right';
+                modalBody.dir = 'rtl';
+            } else {
+                modalBody.style.textAlign = 'left';
+                modalBody.dir = 'ltr';
+            }
 
             // Show Modal
             const modal = document.getElementById('reader-modal');
             modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden'; 
         }
 
         // Close Modal
         function closeModal() {
             const modal = document.getElementById('reader-modal');
             modal.classList.add('hidden');
-            document.body.style.overflow = ''; // Restore scrolling
+            document.body.style.overflow = ''; 
         }
 
         // Close Modal on ESC key
@@ -953,40 +1309,38 @@ Do not include any conversational text, markdown blocks, or explanations outside
             }
         });
 
-        // Mock Share Action
+        // Share Action
         function shareArticle() {
             const title = document.getElementById('modal-title').textContent;
             if (navigator.share) {
                 navigator.share({
                     title: title,
-                    text: 'اقرأ هذا المقال الرائع على منصة تِكْسِلْ التقنية',
+                    text: currentLang === 'ar' ? 'اقرأ هذا المقال الرائع على منصة تِكْسِلْ التقنية' : 'Read this amazing technical thesis on Tixel',
                     url: window.location.href
                 }).catch(console.error);
             } else {
-                // Fallback
                 navigator.clipboard.writeText(window.location.href);
-                alert('تم نسخ رابط المنصة إلى الحافظة لمشاركته مع أصدقائك!');
+                alert(currentLang === 'ar' ? 'تم نسخ الرابط لمشاركته مع أصدقائك!' : 'Link copied to clipboard!');
             }
         }
 
         // Handle Newsletter Subscription
         function handleSubscribe(e) {
             e.preventDefault();
-            const form = document.getElementById('newsletter-form');
             const successMsg = document.getElementById('subscribe-success');
-            
-            // Show success message
             successMsg.classList.remove('hidden');
-            form.reset();
+            document.getElementById('newsletter-form').reset();
 
             setTimeout(() => {
                 successMsg.classList.add('hidden');
-            }, 5000);
+            }, 6000);
         }
 
         // Initialize Page
         window.onload = () => {
-            renderArticles(articles);
+            updateStaticTexts();
+            renderCategoryFilters();
+            renderArticlesGrid();
         };
     </script>
 </body>
